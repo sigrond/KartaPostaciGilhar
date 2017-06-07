@@ -10,7 +10,7 @@
   <button class="w3-bar-item w3-button w3-large w3-green"
   onclick="w3_close()">Close &times;</button>
   <a href="#" class="w3-bar-item w3-button">Strona 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Strona 2</a>
   <a href="#" class="w3-bar-item w3-button">Link 3</a>
 </div>
 
@@ -21,7 +21,7 @@
 </div>
 
 
-<div id="actual_page"  style="width:100%; height:100%; background-color:cyan; float:left; -webkit-transform-origin: top left;"></div>
+<div id="actual_page"  style="width:100%; height:400%; background-color:cyan; float:left; -webkit-transform-origin: top left;"></div>
 
 </div>
 
@@ -40,7 +40,7 @@ function w3_open() {
 		 "-o-transform": "scale("+scale+")",
 		 "-ms-transform": "scale("+scale+")"
 	});
-	$("#my_object").css("width", ""+1/scale*100+"%");
+	$("#my_object").css("width", 1/scale*100+"%");
 	$("#my_object").css("height", $(window).height()+"px");
 }
 function w3_close() {
@@ -55,8 +55,8 @@ function w3_close() {
 		 "-o-transform": "scale("+scale+")",
 		 "-ms-transform": "scale("+scale+")"
 	});
-	$("#my_object").css("width", ""+1/scale*100+"%");
-	$("#my_object").css("height", $(window).height()+"px");
+	$("#my_object").css("width", 1/scale*100+"%");
+	$("#my_object").css("height", 1/scale*100+"%");
 }
 </script>
 
@@ -64,7 +64,7 @@ function w3_close() {
 
 <!--<div id="actual_page" style="width:100%; height:100%; background-color:cyan; float:left;"></div>-->
 <script>
-	$("#actual_page").html('<object id="my_object" type="text/html" data="1.html" style="width:100%;height:100%; -webkit-transform-origin: top left;"></object>');
+	$("#actual_page").html('<object id="my_object" type="text/html" data="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></object>');
 	var scale=$(window).width()/909;
 	console.log(scale);
 	$("#my_object").css({
@@ -73,8 +73,8 @@ function w3_close() {
 		 "-o-transform": "scale("+scale+")",
 		 "-ms-transform": "scale("+scale+")"
 	});
-	$("#my_object").css("width", ""+1/scale*100+"%");
-	$("#my_object").css("height", $(window).height()+"px");
+	$("#my_object").css("width", 1/scale*100+"%");
+	$("#my_object").css("height", 1/scale*100+"%");
 </script>
 	
 </body>
