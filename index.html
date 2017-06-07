@@ -21,21 +21,40 @@
 </div>
 
 
-<div id="actual_page"  style="width:100%; height:100%; background-color:cyan; float:left;"></div>
+<div id="actual_page"  style="width:100%; height:100%; background-color:cyan; float:left; -webkit-transform-origin: top left;"></div>
 
 </div>
 
 <script>
 function w3_open() {
-  document.getElementById("main").style.marginLeft = "15%";
-  document.getElementById("mySidebar").style.width = "15%";
-  document.getElementById("mySidebar").style.display = "block";
-  //document.getElementById("openNav").style.display = 'none';
+	document.getElementById("main").style.marginLeft = "15%";
+	document.getElementById("mySidebar").style.width = "15%";
+	document.getElementById("mySidebar").style.display = "block";
+	//document.getElementById("openNav").style.display = 'none';
+	
+	var scale=$(window).width()*0.85/909;
+	console.log(scale);
+	$("#my_object").css({
+		 "-webkit-transform": "scale("+scale+")",
+		 "-moz-transform": "scale("+scale+")",
+		 "-o-transform": "scale("+scale+")",
+		 "-ms-transform": "scale("+scale+")"
+	});
+	$("#my_object").css("width", ""+1/scale*100+"%");
 }
 function w3_close() {
   document.getElementById("main").style.marginLeft = "0%";
   document.getElementById("mySidebar").style.display = "none";
   //document.getElementById("openNav").style.display = "inline-block";
+  var scale=$(window).width()/909;
+	console.log(scale);
+	$("#my_object").css({
+		 "-webkit-transform": "scale("+scale+")",
+		 "-moz-transform": "scale("+scale+")",
+		 "-o-transform": "scale("+scale+")",
+		 "-ms-transform": "scale("+scale+")"
+	});
+	$("#my_object").css("width", ""+1/scale*100+"%");
 }
 </script>
 
@@ -43,7 +62,16 @@ function w3_close() {
 
 <!--<div id="actual_page" style="width:100%; height:100%; background-color:cyan; float:left;"></div>-->
 <script>
-	$("#actual_page").html('<object type="text/html" data="1.html" style="width:100%;height:100%;"></object>');
+	$("#actual_page").html('<object id="my_object" type="text/html" data="1.html" style="width:100%;height:100%; -webkit-transform-origin: top left;"></object>');
+	var scale=$(window).width()/909;
+	console.log(scale);
+	$("#my_object").css({
+		 "-webkit-transform": "scale("+scale+")",
+		 "-moz-transform": "scale("+scale+")",
+		 "-o-transform": "scale("+scale+")",
+		 "-ms-transform": "scale("+scale+")"
+	});
+	$("#my_object").css("width", ""+1/scale*100+"%");
 </script>
 	
 </body>
