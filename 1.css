@@ -46,7 +46,7 @@
 #t1a_1{left:317px;top:800px;letter-spacing:-0.1px;}
 #t1b_1{left:42px;top:824px;letter-spacing:-0.2px;}
 #t1c_1{left:84px;top:824px;}
-#t1d_1{left:95px;top:824px;letter-spacing:-0.4px;}
+#t1d_1{left:84px;top:824px;letter-spacing:-0.4px;}
 #t1e_1{left:385px;top:824px;letter-spacing:0.2px;}
 #t1f_1{left:529px;top:824px;letter-spacing:-2px;}
 #t1g_1{left:549px;top:824px;letter-spacing:-0.3px;}
@@ -95,6 +95,7 @@
 	top:470px;
 }
 #tab_zdol{left:25px;top:545px;}
+#tab_poz_SW{left:420px;top:815px;}
 
 .s1_1{
 	FONT-SIZE: 73.3px;
@@ -156,7 +157,7 @@
 	color: rgb(0,0,0);
 }
 
-input{
+input[type="text"],input[type="number"]{
 	border: none;
 	background: transparent;
 }
@@ -252,4 +253,9 @@ input{
 }
 .zdolK5{
 	width:290px;
+}
+.m1-check{
+	width:59px;
+	height:59px;
+	margin-right:18px;
 }
