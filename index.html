@@ -9,19 +9,19 @@
 <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-green"
   onclick="w3_close()">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(1)">Strona 1</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(2)">Strona 2</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(3)">Strona 3</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(4)">Strona 4</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(5)">Strona 5</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(6)">Strona 6</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(7)">Strona 7</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(8)">Strona 8</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(9)">Strona 9</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(10)">Strona 10</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(11)">Strona 11</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(12)">Strona 12</a>
-  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(13)">Strona 13</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(1)">Strona 1 - Staty, Umiejętności</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(2)">Strona 2 - Pancerz, Bronie, PD</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(3)">Strona 3 - Ekwipunek, Monety</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(4)">Strona 4 - Ekwipunek</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(5)">Strona 5 - Alchemia</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(6)">Strona 6 - Magia Pieczęci</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(7)">Strona 7 - Magia Rytuału, Czary</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(8)">Strona 8 - Magia Rytuału, Rytuały</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(9)">Strona 9 - Magia KI</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(10)">Strona 10 - Magia Krwi</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(11)">Strona 11 - Sojusznicy</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(12)">Strona 12 - Mechanizmy</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="pokaz(13)">Strona 13 - Postacie</a>
   
 </div>
 
@@ -38,12 +38,12 @@
 
 <script>
 function w3_open() {
-	document.getElementById("main").style.marginLeft = "15%";
-	document.getElementById("mySidebar").style.width = "15%";
+	document.getElementById("main").style.marginLeft = "20%";
+	document.getElementById("mySidebar").style.width = "20%";
 	document.getElementById("mySidebar").style.display = "block";
 	//document.getElementById("openNav").style.display = 'none';
 	
-	var scale=$(window).width()*0.85/909;
+	var scale=$(window).width()*0.80/909;
 	console.log(scale);
 	$("#my_object").css({
 		 "-webkit-transform": "scale("+scale+")",
