@@ -40,7 +40,10 @@
 <script>
 function w3_open() {
 	//document.getElementById("main").style.marginLeft = "20%";
-	var desired_size=$(window).width()*0.2;
+	document.getElementById("mySidebar").style.width = "20%";
+	document.getElementById("mySidebar").style.display = "block";
+	//document.getElementById("openNav").style.display = 'none';
+	var desired_size=$("#mySidebar").width();//$(window).width()*0.2;
 	console.log("open:"+desired_size);
 	$("#main").css({
 		"-webkit-transform": "translateX("+desired_size+"px)",
@@ -48,9 +51,6 @@ function w3_open() {
 		 "-o-transform": "translateX("+desired_size+"px)",
 		 "-ms-transform": "translateX("+desired_size+"px)"
 	});
-	document.getElementById("mySidebar").style.width = "20%";
-	document.getElementById("mySidebar").style.display = "block";
-	//document.getElementById("openNav").style.display = 'none';
 	
 	var scale=$(window).width()*0.80/909;
 	console.log(scale);
