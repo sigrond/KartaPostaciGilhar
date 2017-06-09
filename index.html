@@ -26,7 +26,7 @@
   
 </div>
 
-<div class="w3-main w3-mobile" id="main">
+<div class="w3-main w3-mobile" id="main" style="-webkit-transform-origin: top left;">
 
 <div class="w3-teal">
   <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()"><i class="material-icons">menu</i><!--&#9776;--></button> Karta Postaci Gilhar
@@ -39,7 +39,15 @@
 
 <script>
 function w3_open() {
-	document.getElementById("main").style.marginLeft = "20%";
+	//document.getElementById("main").style.marginLeft = "20%";
+	var desired_size=$(window).width()*0.2;
+	console.log("open:"+desired_size);
+	$("#main").css({
+		"-webkit-transform": "translateX("+desired_size+"px)",
+		 "-moz-transform": "translateX("+desired_size+"px)",
+		 "-o-transform": "translateX("+desired_size+"px)",
+		 "-ms-transform": "translateX("+desired_size+"px)"
+	});
 	document.getElementById("mySidebar").style.width = "20%";
 	document.getElementById("mySidebar").style.display = "block";
 	//document.getElementById("openNav").style.display = 'none';
@@ -56,11 +64,19 @@ function w3_open() {
 	$("#my_object").css("height", $(window).height()+"px");
 }
 function w3_close() {
-  document.getElementById("main").style.marginLeft = "0%";
+  //document.getElementById("main").style.marginLeft = "0%";
+  var desired_size=$(window).width()*(0);//przesunięcie jest względem panelu, ale samo się nie aktywuje
+  console.log("close:"+desired_size);
+	$("#main").css({
+		"-webkit-transform": "translateX("+desired_size+"px)",
+		 "-moz-transform": "translateX("+desired_size+"px)",
+		 "-o-transform": "translateX("+desired_size+"px)",
+		 "-ms-transform": "translateX("+desired_size+"px)"
+	});
   document.getElementById("mySidebar").style.display = "none";
   //document.getElementById("openNav").style.display = "inline-block";
   var scale=$(window).width()/909;
-	console.log(scale);
+	//console.log(scale);
 	$("#my_object").css({
 		 "-webkit-transform": "scale("+scale+")",
 		 "-moz-transform": "scale("+scale+")",
