@@ -98,6 +98,9 @@
 #tab_poz_SW{left:420px;top:815px;}
 #tab_SW{left:32px;top:900px;}
 #t21_12b{left:651px;top:1110px;letter-spacing:0.3px;}
+#tab_akt{left:702px;top:890px;}
+#tab_abs{left:754px;top:1018px;}
+#tab_man{left:754px;top:1161px;}
 
 .s1_1{
 	FONT-SIZE: 73.3px;
@@ -269,6 +272,7 @@ input[type="text"],input[type="number"]{
 }
 .tab_SW_K2{
 	width:139px;
+	text-align:center;
 }
 .tab_SW_K3{
 	width:139px;
@@ -278,4 +282,25 @@ input[type="text"],input[type="number"]{
 }
 .tab_SW_K5{
 	width:1450px;
+}
+.tab_akt_W{
+	height:100px;
+	text-align:center;
+}
+.tab_akt_K{
+	width:133px;
+}
+.tab_abs_W{
+	height:100px;
+	text-align:center;
+}
+.tab_abs_K{
+	width:155px;
+}
+.tab_man_W{
+	height:100px;
+	text-align:center;
+}
+.tab_man_K{
+	width:155px;
 }
