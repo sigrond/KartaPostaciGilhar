@@ -183,3 +183,32 @@ input[type="text"],input[type="number"]{
 .tab_panc_K5{
 	width:150px;
 }
+
+#tab_bronD1{left:285px;top:922px;}
+.tab_bronD_W{
+	height:116px;
+}
+.tab_bronD_K{
+	width:255px;
+}
+.tab_bronD_K_ME{
+	width:128px;
+}
+#tab_bronD2{left:638px;top:922px;}
+
+#tab_bronB2{left:634px;top:327px;}
+
+#tab_bronB3{left:634px;top:596px;}
+
+#tab_kieszenie{
+	left:10px;
+	top:1200px;
+}
+.tab_kieszenie_W{
+	height:116px;
+}
+.tab_kieszenie_K{
+	width:600px;
+	margin-right:120px;
+	text-align:center;
+}
