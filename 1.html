@@ -6,6 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="1.css">
+<script src="progiTestowe.js"></script>
 </head>
 
 <body style="margin: 0;">
@@ -67,62 +68,65 @@
 <div id="tg_1" class="t s1_1">F <input class="FPM" type="number" value="20"></div>
 <div id="th_1" class="t s1_1">P <input class="FPM" type="number" value="20"></div>
 <div id="ti_1" class="t s1_1">M <input class="FPM" type="number" value="20"></div>
-<div id="tj_1" class="t s1_1"><label class="statspacer">S. Fiz.</label><input class="stata" type="number" value="30"></div>
-<div id="tk_1" class="t s1_1"><label class="statspacer">Wyt.  </label><input class="stata" type="number" value="30"></div>
-<div id="tl_1" class="t s1_1"><label class="statspacer">Char. </label><input class="stata" type="number" value="30"></div>
-<div id="tm_1" class="t s1_1"><label class="statspacer">Per.    </label><input class="stata" type="number" value="30"></div>
-<div id="tn_1" class="t s1_1"><label class="statspacer">Int.    </label><input class="stata" type="number" value="30"></div>
-<div id="to_1" class="t s1_1"><label class="statspacer">Zrę.   </label><input class="stata" type="number" value="30"></div>
+<div id="tj_1" class="t s1_1"><label class="statspacer">S. Fiz.</label><input id="SFiz" class="stata stataG" type="number" value="30"></div>
+<div id="tk_1" class="t s1_1"><label class="statspacer">Wyt.  </label><input id="Wyt" class="stata stataG" type="number" value="30"></div>
+<div id="to_1" class="t s1_1"><label class="statspacer">Zrę.   </label><input id="Zre" class="stata stataG" type="number" value="30"></div>
+<div id="tn_1" class="t s1_1"><label class="statspacer">Int.    </label><input id="Int" class="stata stataG" type="number" value="30"></div>
+<div id="tm_1" class="t s1_1"><label class="statspacer">Per.    </label><input id="Per" class="stata stataG" type="number" value="30"></div>
+<div id="tl_1" class="t s1_1"><label class="statspacer">Char. </label><input id="Char" class="stata stataG" type="number" value="30"></div>
+<div id="tt_1" class="t s1_1"><label class="statspacer">Wola  </label><input id="Wola" class="stata stataG" type="number" value="30"></div>
+
+
 <div id="tp_1" class="t s1_1"><label class="statspacer">Wit.      </label><input class="stata" type="number" value="30"><input id="wit_mod" class="mod" type="number" value="0"></div>
 <div id="tq_1" class="t s1_1"><label class="statspacer">Obw.     </label><input class="stata" type="number" value="30"><input id="obw_mod" class="mod" type="number" value="0"></div>
 <div id="tr_1" class="t s1_1"><label class="statspacer">Życie  </label><input class="stata" type="number" value="30"><input id="zycie_max" class="max" type="number" value="30"></div>
 <div id="ts_1" class="t s1_1"><label class="statspacer">Ene.   </label><input class="stata" type="number" value="30"><input id="ene_max" class="max" type="number" value="30"></div>
-<div id="tt_1" class="t s1_1"><label class="statspacer">Wola  </label><input class="stata" type="number" value="30"></div>
+
 <div id="tu_1" class="t s3_1">Staty</div>
 <div id="tv_1" class="t s3_1">T I</div>
 <div id="tw_1" class="t s3_1">T II</div>
 <div id="tx_1" class="t s3_1">T III</div>
 <table id="tab_prog" class="t s5_1">
 	<tr class="progW">
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="SFizT1" class="progC" type="number" value="30"></th>
+		<th><input id="SFizT2" class="progC" type="number" value="20"></th>
+		<th><input id="SFizT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="WytT1" class="progC" type="number" value="30"></th>
+		<th><input id="WytT2" class="progC" type="number" value="20"></th>
+		<th><input id="WytT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="ZreT1" class="progC" type="number" value="30"></th>
+		<th><input id="ZreT2" class="progC" type="number" value="20"></th>
+		<th><input id="ZreT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="IntT1" class="progC" type="number" value="30"></th>
+		<th><input id="IntT2" class="progC" type="number" value="20"></th>
+		<th><input id="IntT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="PerT1" class="progC" type="number" value="30"></th>
+		<th><input id="PerT2" class="progC" type="number" value="20"></th>
+		<th><input id="PerT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="CharT1" class="progC" type="number" value="30"></th>
+		<th><input id="CharT2" class="progC" type="number" value="20"></th>
+		<th><input id="CharT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 	<tr class="progW">>
-		<th><input class="progC" type="number" value="30"></th>
-		<th><input class="progC" type="number" value="20"></th>
-		<th><input class="progC" type="number" value="10"></th>
+		<th><input id="WolaT1" class="progC" type="number" value="30"></th>
+		<th><input id="WolaT2" class="progC" type="number" value="20"></th>
+		<th><input id="WolaT3" class="progC" type="number" value="10"></th>
 		<th><input class="progC" type="text" value="+0"></th>
 	</tr>
 </table>
