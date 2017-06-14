@@ -10,10 +10,16 @@ function progTestowy(prog, stata)
 			stataN=Number(stata)+10;
 			break;
 		case 2:
-			stataN=stata;
+			if(stataN>10)
+				stataN=stata;
+			else
+				stataN=0;
 			break;
 		case 3:
-			stataN=stata-10;
+			if(stataN>20)
+				stataN=stata-10;
+			else
+				stataN=0;
 			break;
 	}
 	if(stataN<0)
