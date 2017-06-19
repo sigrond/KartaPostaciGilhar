@@ -112,6 +112,22 @@ function pokaz(i){
 	$("#my_object").css("height", 1/scale*100+"%");
 	w3_close();
 }
+
+$.ajax({
+    type: "GET",
+    url: 'http://projektgil.cba.pl/test.php',
+	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
+	jsonpCallback: 'callback',
+    contentType: "text/html",
+    crossDomain:'true',
+    //data: {uname: "admin", pass: "admin"},
+    success: function (json) {
+        //process the json here.
+		//alert(json.join(' '));
+		console.log(json);
+    }
+});
+
 </script>
 
 
