@@ -32,7 +32,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.2alpha.9</i>
+	<i class="w3-bar-item">v.0.2alpha.10</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -125,6 +125,11 @@ $.ajax({
         //process the json here.
 		//alert(json.join(' '));
 		console.log(json);
+		var myStr=String("");
+		$.each(json,function(i,v){
+			myStr+=i+": "+v+", ";
+		})
+		$("#main").append(myStr);
     }
 });
 
@@ -135,6 +140,7 @@ $.ajax({
 <!--<div id="actual_page" style="width:100%; height:100%; background-color:cyan; float:left;"></div>-->
 <script>
 	$("#actual_page").html('<object id="my_object" type="text/html" data="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></object>');
+	console.log($("#my_object").html());
 	var scale=$(window).width()/909;
 	console.log(scale);
 	$("#my_object").css({
