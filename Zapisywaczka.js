@@ -17,9 +17,23 @@ $(document).ready(function(){
 	$("input").each(function(){
 		if(!this.id)
 			this.id="myGenericID"+i++;
-//		else
-//			this.value=wczytaj(this.id);
 	});
+	
+	if(localStorage.zapisane==="true")
+	{
+		console.log(localStorage.zapisane);
+		$("input").each(function(){
+			this.value=wczytaj(this.id);
+		});
+	}
+	else
+	{
+		$("input").each(function(){
+			zapisz(this.id, this.value);
+		});
+		localStorage.zapisane="true";
+	}
+	
 	$("input").change(function(){
 		zapisz(this.id, this.value);
 	});
