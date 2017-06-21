@@ -35,7 +35,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.3alpha.13</i>
+	<i class="w3-bar-item">v.0.3alpha.14</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -179,8 +179,20 @@ function logowanie(){
 			$("#Logowanie").val("Zalogowany!");
 		}
     }
-});
+	});
 }
+
+$(document).ready(function(){
+	if(sessionStorage.LoggedIn==="true")
+	{
+		$("#Login").val(sessionStorage.uname);
+		$("#Haslo").val(sessionStorage.upswd);
+		$("#Login").attr("disabled", "disabled");
+		$("#Haslo").attr("disabled", "disabled");
+		$("#Logowanie").attr("disabled", "disabled");
+		$("#Logowanie").val("Zalogowany!");
+	}
+})
 
 </script>
 

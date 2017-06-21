@@ -1,19 +1,31 @@
 <?php
+error_reporting(E_ALL);
 header('Content-type: application/json');
 if(isset($_GET["name"]) && isset($_GET["pswd"]))
 {
 	$servername = "localhost";
 	$username = "sigrond";
 	include "configs/vars.php";
+	$db_name="sigrond";
 	
-	$conn = new mysqli($servername, $username, $password);
+	$conn = new mysqli($servername, $username, $password, $db_name);
 	
 	if ($conn->connect_error) {
+		$arr["status"]="DBCONNECTIONERROR";
 		die("Connection failed: " . $conn->connect_error);
 	}
 	
-	$sql = "SELECT pswd FROM gracz WHERE name='"+$_GET["name"]+"'";
+	$sql = "SELECT * FROM gracz";
 	$result = $conn->query($sql);
+	
+	if ($result === false) {
+		//error
+		$arr["status"]="QUERYERROR";
+	}
+	else {
+		//success
+		$arr["status"]="QUERYSUCCESS";
+	}
 	
 	if ($result->num_rows > 0) {
 		// output data of each row
