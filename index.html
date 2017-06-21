@@ -35,7 +35,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.2alpha.12</i>
+	<i class="w3-bar-item">v.0.3alpha.13</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -52,7 +52,7 @@
 			<input id="Login" class="w3-bar-item w3-input w3-border" type="text">
 			<label class="w3-bar-item">Hasło</label>
 			<input id="Haslo" class="w3-bar-item w3-input w3-border" type="password">
-			<input class="w3-bar-item w3-button w3-round-xxlarge w3-khaki" type="button" value="Logowanie" onclick="logowanie()">
+			<input id="Logowanie" class="w3-bar-item w3-button w3-round-xxlarge w3-khaki" type="button" value="Logowanie" onclick="logowanie()">
 		</div>
 	</div>
 </div>
@@ -152,8 +152,8 @@ $.ajax({
 });
 
 function logowanie(){
-	var uname=$("#Login").val();
-	var upswd=MD5($("#Haslo").val());//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
+	var uname=String($("#Login").val());
+	var upswd=String(MD5($("#Haslo").val()));//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
 	$.ajax({
     type: "GET",
     url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/login.php',
@@ -166,7 +166,18 @@ function logowanie(){
 		pswd: upswd
 		},
     success: function (json) {
+		console.log("login odpowiedzial");
 		console.log(json.status);
+		if(json.status==="OK")
+		{
+			sessionStorage.LoggedIn="true";
+			sessionStorage.uname=uname;
+			sessionStorage.upswd=upswd;
+			$("#Login").attr("disabled", "disabled");
+			$("#Haslo").attr("disabled", "disabled");
+			$("#Logowanie").attr("disabled", "disabled");
+			$("#Logowanie").val("Zalogowany!");
+		}
     }
 });
 }
