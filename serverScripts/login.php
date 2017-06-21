@@ -2,7 +2,7 @@
 header('Content-type: application/json');
 if(isset($_GET["name"]) && isset($_GET["pswd"]))
 {
-	$servername = "sigrond";
+	$servername = "localhost";
 	$username = "sigrond";
 	include "configs/vars.php";
 	
