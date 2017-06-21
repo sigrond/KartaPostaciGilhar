@@ -35,7 +35,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.2alpha.11</i>
+	<i class="w3-bar-item">v.0.2alpha.12</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -43,6 +43,16 @@
 			<a href="#" class="w3-bar-item w3-button">Umiejętności</a>
 			<a href="#" class="w3-bar-item w3-button">Szkoły Walki</a>
 			<a href="#" class="w3-bar-item w3-button">Magie</a>
+		</div>
+	</div>
+	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
+		<button class="w3-button">Logowanie</button>
+		<div class="w3-dropdown-content w3-bar-block w3-border">
+			<label class="w3-bar-item">Login</label>
+			<input id="Login" class="w3-bar-item w3-input w3-border" type="text">
+			<label class="w3-bar-item">Hasło</label>
+			<input id="Haslo" class="w3-bar-item w3-input w3-border" type="password">
+			<input class="w3-bar-item w3-button w3-round-xxlarge w3-khaki" type="button" value="Logowanie" onclick="logowanie()">
 		</div>
 	</div>
 </div>
@@ -102,7 +112,7 @@ function w3_close() {
 	$("#my_object").css("height", 1/scale*100+"%");
 }
 function pokaz(i){
-	$("#actual_page").html('<object id="my_object" type="text/html" data="'+i+'.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></object>');
+	$("#actual_page").html('<iframe id="my_object" type="text/html" src="'+i+'.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
 	var scale=$(window).width()/909;
 	console.log(scale);
 	$("#my_object").css({
@@ -125,7 +135,10 @@ $.ajax({
 	jsonpCallback: 'callback',
     contentType: "text/html",
     crossDomain:'true',
-    data: {name: "admin", pswd: MD5("admin")},//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
+    data: {
+		name: "admin",
+		pswd: MD5("admin")
+		},
     success: function (json) {
         //process the json here.
 		//alert(json.join(' '));
@@ -138,14 +151,37 @@ $.ajax({
     }
 });
 
+function logowanie(){
+	var uname=$("#Login").val();
+	var upswd=MD5($("#Haslo").val());//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
+	$.ajax({
+    type: "GET",
+    url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/login.php',
+	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
+	jsonpCallback: 'callback',
+    contentType: "text/html",
+    crossDomain:'true',
+    data: {
+		name: uname,
+		pswd: upswd
+		},
+    success: function (json) {
+		console.log(json.status);
+    }
+});
+}
+
 </script>
 
 
 
 <!--<div id="actual_page" style="width:100%; height:100%; background-color:cyan; float:left;"></div>-->
 <script>
-	$("#actual_page").html('<object id="my_object" type="text/html" data="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></object>');
-	console.log($("#my_object").html());
+	$("#actual_page").html('<iframe id="my_object" type="text/html" src="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
+	/*console.log($("#my_object").contents());
+	$("#my_object").ready(function(){
+		$("#main").append($("#my_object").html());
+	})*/
 	var scale=$(window).width()/909;
 	console.log(scale);
 	$("#my_object").css({
