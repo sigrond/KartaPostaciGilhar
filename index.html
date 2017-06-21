@@ -130,7 +130,7 @@ function pokaz(i){
 
 $.ajax({
     type: "GET",
-    url: 'https://crossorigin.me/http://projektgil.cba.pl/test.php',
+    url: 'http://projektgil.cba.pl/test.php',
 	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
 	jsonpCallback: 'callback',
     contentType: "text/html",
@@ -156,7 +156,7 @@ function logowanie(){
 	var upswd=String(MD5($("#Haslo").val()));//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
 	$.ajax({
     type: "GET",
-    url: 'https://crossorigin.me/http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/login.php',
+    url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/login.php',
 	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
 	jsonpCallback: 'callback',
     contentType: "text/html",
