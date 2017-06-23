@@ -130,11 +130,12 @@ function pokaz(i){
 
 $.ajax({
     type: "GET",
-    url: 'http://projektgil.cba.pl/test.php',
+    url: 'https://crossorigin.me/http://projektgil.cba.pl/test.php',
 	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
 	jsonpCallback: 'callback',
-    contentType: "text/html",
+    contentType: "application/json",
     crossDomain:'true',
+	headers: {'Origin': 'https://sigrond.github.io'},
     data: {
 		name: "admin",
 		pswd: MD5("admin")
