@@ -35,7 +35,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.3alpha.14</i>
+	<i class="w3-bar-item">v.0.3alpha.15</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -130,12 +130,12 @@ function pokaz(i){
 
 $.ajax({
     type: "GET",
-    url: 'https://crossorigin.me/http://projektgil.cba.pl/test.php',
+    url: 'http://projektgil.cba.pl/test.php',
 	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
 	jsonpCallback: 'callback',
     contentType: "application/json",
     crossDomain:'true',
-	headers: {'Origin': 'https://sigrond.github.io'},
+	//headers: {'Origin': 'https://sigrond.github.io'},
     data: {
 		name: "admin",
 		pswd: MD5("admin")
