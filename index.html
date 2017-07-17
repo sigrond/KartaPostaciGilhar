@@ -36,7 +36,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.3alpha.16</i>
+	<i class="w3-bar-item">v.0.3alpha.17</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -115,10 +115,20 @@ function w3_close() {
 function pokaz(i){
 	//$("#actual_page").html('<iframe id="my_object" type="text/html" src="'+i+'.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
 	$.get({
-		url: String('http://projektgil.cba.pl/KartaPostaciGilhar/'+i+'.php'),
-		success: function(data) {
-			console.log(data);
-			$("#actual_page").html(data);
+		url: String('http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/getPage.php?page='+i),
+		dataType: 'jsonp',
+		//jsonpCallback: 'callback',
+		//contentType: "application/json",
+		crossDomain:'true',
+		success: function(json) {
+			//data.replace(/<!-- iBILLBOARD.*<!-- cba </body><!-->);
+			//var res=data.replace(/([\s\S]*?)iBILLBOARD[\s\S]*?bmone2n.moveAd();/g, '$1');
+			console.log(json);
+			$("#actual_page").html(json.data);
+			localStorage.setItem("page"+i, json.data);
+		},
+		error: function() {
+			$("#actual_page").html(localStorage.getItem("page"+i));
 		}
 	});
 	var scale=$(window).width()/909;
