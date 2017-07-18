@@ -87,7 +87,7 @@
 #t2f_1{left:653px;top:1163px;}
 #t2g_1{left:653px;top:1190px;}
 
-#tab_prog{left:760px;top:24px;}
+#tab_prog{left:760px;top:18px;}
 #obw_mod{left:100px;}
 #tab_umie{left:25px;top:186px;}
 #list_cechy{
@@ -184,11 +184,11 @@ input[type="text"],input[type="number"]{
 
 .progC{
 	width:120px;
-	padding-bottom:56px;
+	padding-bottom:0px;
 }
 
 .progW{
-	height:56px;
+	height:150px;
 }
 
 .mod{
