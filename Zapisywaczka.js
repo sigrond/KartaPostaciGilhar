@@ -18,11 +18,12 @@ $(document).ready(function(){
 	var i=0;
 	var myOuter="";
 	if($("#actual_page").length)
-		myOuter="#actual_page > ";
+		myOuter="#actual_page ";
 	console.log(myOuter);
 	$(myOuter+"input").each(function(){
 		if(!this.id)
 			this.id="myGenericID"+i++;//tworzenie id dla pól które ich nie mają
+		//console.log(this.id);
 	});
 	
 	if(localStorage.zapisane==="true")
