@@ -16,7 +16,11 @@ function wczytaj(nazwa){
 
 $(document).ready(function(){
 	var i=0;
-	$("input").each(function(){
+	var myOuter="";
+	if($("#actual_page").length)
+		myOuter="#actual_page > ";
+	console.log(myOuter);
+	$(myOuter+"input").each(function(){
 		if(!this.id)
 			this.id="myGenericID"+i++;//tworzenie id dla pól które ich nie mają
 	});
@@ -24,14 +28,14 @@ $(document).ready(function(){
 	if(localStorage.zapisane==="true")
 	{
 		console.log(localStorage.zapisane);
-		$("input").each(function(){
+		$(myOuter+"input").each(function(){
 			this.value=wczytaj(this.id);//wczytanie wszystkich wartości
 		});
 	}
 	else
 	{
 		var myObj={};
-		$("input").each(function(){
+		$(myOuter+"input").each(function(){
 			zapisz(this.id, this.value);//pierwszy zapis wszystkich wartości
 			myObj[String(this.id)]=String(this.value);
 		});
@@ -60,7 +64,7 @@ $(document).ready(function(){
 		localStorage.zapisane="true";
 	}
 	
-	$("input").change(function(){
+	$(myOuter+"input").change(function(){
 		zapisz(this.id, this.value);//zapis pojedyńczej zmienionej wartości
 	});
 });
