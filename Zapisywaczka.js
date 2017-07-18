@@ -22,7 +22,7 @@ $(document).ready(function(){
 	console.log(myOuter);
 	$(myOuter+"input").each(function(){
 		if(!this.id)
-			this.id="myGenericID"+i++;//tworzenie id dla pól które ich nie mają
+			this.id="myGenericID"+strona+"s"+i++;//tworzenie id dla pól które ich nie mają
 		//console.log(this.id);
 	});
 	
