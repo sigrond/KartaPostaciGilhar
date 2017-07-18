@@ -123,6 +123,9 @@ function pokaz(i){
 		success: function(json) {
 			console.log(json);
 			
+			strona=i;
+			$("#extra_scripts").html("");
+			
 			var dom = $(json.data);
 
 			dom.filter('script').each(function(){
@@ -133,7 +136,7 @@ function pokaz(i){
 						attrValue = attrs[i].value;
 						script[attrName] = attrValue;
 					}
-					document.body.appendChild(script);
+					document.getElementById("extra_scripts").appendChild(script);
 				} else {
 					$.globalEval(this.text || this.textContent || this.innerHTML || '');
 				}
@@ -257,5 +260,6 @@ $(document).ready(function(){
 	<div id="debug_ids">CREATE TABLE DanePostaci ( id INT PRIMARY KEY UNIQUE, </div>
 	<div id="debug_vals"></div>
 </div>
+<div id="extra_scripts"></div>
 </body>
 </html>

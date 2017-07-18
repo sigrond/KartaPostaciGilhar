@@ -41,6 +41,7 @@ $(document).ready(function(){
 			myObj[String(this.id)]=String(this.value);
 		});
 		console.log(myObj);
+		console.log("strona: "+strona);
 		$.post({
 			url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/zapiszDanePostaci'+strona+'.php',
 			crossDomain: true,
