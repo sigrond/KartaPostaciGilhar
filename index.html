@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script src="nativeMD5.js"></script>
 <script src="protocolTest.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -121,10 +121,26 @@ function pokaz(i){
 		//contentType: "application/json",
 		crossDomain:'true',
 		success: function(json) {
-			//data.replace(/<!-- iBILLBOARD.*<!-- cba </body><!-->);
-			//var res=data.replace(/([\s\S]*?)iBILLBOARD[\s\S]*?bmone2n.moveAd();/g, '$1');
 			console.log(json);
-			$("#actual_page").html(json.data);
+			
+			var dom = $(json.data);
+
+			dom.filter('script').each(function(){
+				if(this.src) {
+					var script = document.createElement('script'), i, attrName, attrValue, attrs = this.attributes;
+					for(i = 0; i < attrs.length; i++) {
+						attrName = attrs[i].name;
+						attrValue = attrs[i].value;
+						script[attrName] = attrValue;
+					}
+					document.body.appendChild(script);
+				} else {
+					$.globalEval(this.text || this.textContent || this.innerHTML || '');
+				}
+			});
+			
+			$("#actual_page").html($.parseHTML(json.data));
+			//eval($(json.data).find('script').html());
 			localStorage.setItem("page"+i, json.data);
 		},
 		error: function() {
