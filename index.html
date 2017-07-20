@@ -144,7 +144,7 @@ function pokaz(i){
 					}
 					document.getElementById("extra_scripts").appendChild(script);
 					//$.getScript('http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue);
-					$.ajax({
+					/*$.ajax({
 						url: 'http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue,
 						async: true,
 						dataType: 'script',
@@ -161,7 +161,7 @@ function pokaz(i){
 							console.log(textStatus);
 							console.log(errorThrown);
 						}
-					});
+					});*/
 					console.log("script src: "+attrValue);
 					scriptsExecutionOrderGuard[index]=true;
 				} else {
