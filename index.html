@@ -36,7 +36,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item">v.0.3alpha.17</i>
+	<i class="w3-bar-item">v.0.3alpha.18</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border">
@@ -58,8 +58,9 @@
 	</div>
 </div>
 
+<div id="extra_scripts"></div>
 
-<div id="actual_page"  style="width:100%; height:400%; background-color:cyan; float:left; -webkit-transform-origin: top left;"></div>
+<div id="actual_page"  style="width:100%; height:400%; background-color:lightcyan; float:left; -webkit-transform-origin: top left;"></div>
 
 </div>
 
@@ -127,8 +128,13 @@ function pokaz(i){
 			$("#extra_scripts").html("");
 			
 			var dom = $(json.data);
+			
+			$("#actual_page").html($.parseHTML(json.data));
+			
+			scriptsExecutionOrderGuard=new Array();
 
-			dom.filter('script').each(function(){
+			dom.filter('script').each(function(index, value){
+				scriptsExecutionOrderGuard[index]=false;
 				if(this.src) {
 					var script = document.createElement('script'), i, attrName, attrValue, attrs = this.attributes;
 					for(i = 0; i < attrs.length; i++) {
@@ -137,12 +143,41 @@ function pokaz(i){
 						script[attrName] = attrValue;
 					}
 					document.getElementById("extra_scripts").appendChild(script);
+					//$.getScript('http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue);
+					$.ajax({
+						url: 'http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue,
+						async: true,
+						dataType: 'script',
+						success: function(data, textStatus, jqxhr){
+							eval(data);
+							console.log('eval('+data+');');
+							console.log(data);
+							console.log(textStatus);
+							console.log(jqxhr);
+							scriptsExecutionOrderGuard[index]=true;
+						},
+						error: function(jqXHR, textStatus, errorThrown){
+							console.log(jqXHR);
+							console.log(textStatus);
+							console.log(errorThrown);
+						}
+					});
+					console.log("script src: "+attrValue);
+					scriptsExecutionOrderGuard[index]=true;
 				} else {
-					$.globalEval(this.text || this.textContent || this.innerHTML || '');
+					while(index>0 && scriptsExecutionOrderGuard[index-1]!=true) setTimeout(function(){},100);
+					var script = document.createElement('script');
+					script.text=(this.text || this.textContent || this.innerHTML || '');
+					document.getElementById("extra_scripts").appendChild(script);
+					//$("#extra_scripts").append('<script>'+(this.text || this.textContent || this.innerHTML || ''));
+					//$("#extra_scripts").append('<\/script>');
+					//$.globalEval(this.text || this.textContent || this.innerHTML || '');
+					console.log("script text");
+					scriptsExecutionOrderGuard[index]=true;
 				}
 			});
 			
-			$("#actual_page").html($.parseHTML(json.data));
+			
 			//eval($(json.data).find('script').html());
 			localStorage.setItem("page"+i, json.data);
 		},
@@ -260,6 +295,6 @@ $(document).ready(function(){
 	<div id="debug_ids">CREATE TABLE DanePostaci ( id INT PRIMARY KEY UNIQUE, </div>
 	<div id="debug_vals"></div>
 </div>
-<div id="extra_scripts"></div>
+
 </body>
 </html>
