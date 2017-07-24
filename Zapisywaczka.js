@@ -2,12 +2,15 @@
  * funkcje odpowiedzialne za zapisywanie i wczytywanie danych karty postaci
 */
 
+fieldColector=new Array();
+
 function zapisz(nazwa, wartosc){
 	localStorage.setItem(String(nazwa), String(wartosc));
 	console.log(String(nazwa)+":"+String(wartosc));
-	$("#debug_ids"+strona,).append(String(nazwa)+" TEXT, ");
+	//$("#debug_ids"+strona,).append(String(nazwa)+" TEXT, ");
 	//tu moze pojawić się jakiś ajax
-	
+	fieldColector[strona][String(nazwa)]=String(wartosc);
+	localStorage.setItem('fieldColector', JSON.stringify(fieldColector));
 }
 
 function wczytaj(nazwa){
@@ -20,13 +23,26 @@ $(document).ready(function(){
 	if($("#actual_page").length)
 		myOuter="#actual_page ";
 	console.log(myOuter);
+	console.log('strona: '+strona);
+	
+	fieldColector=JSON.parse(localStorage.getItem("fieldColector"));
+	if(fieldColector==null)
+	{
+		fieldColector={};
+		fieldColector[strona]={};
+	}
+	if(fieldColector[strona]==undefined)
+	{
+		fieldColector[strona]={};
+	}
 	$(myOuter+"input").each(function(){
 		if(!this.id)
 			this.id="myGenericID"+strona+"s"+i++;//tworzenie id dla pól które ich nie mają
 		//console.log(this.id);
+		//fieldColector.push(this.id);
 	});
 	
-	if(localStorage.zapisane==="true")
+	if(localStorage['zapisane'+strona]==="true")
 	{
 		console.log(localStorage.zapisane);
 		$(myOuter+"input").each(function(){
@@ -63,7 +79,7 @@ $(document).ready(function(){
 				console.log(errorThrown);
 			}
 		});
-		localStorage.zapisane="true";
+		localStorage['zapisane'+strona]="true";
 	}
 	
 	$(myOuter+"input").change(function(){
