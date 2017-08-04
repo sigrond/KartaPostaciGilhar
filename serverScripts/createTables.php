@@ -28,6 +28,44 @@ if (!$conn) {
 	$arr["dbce2"]=mysqli_connect_error();
 }
 
+$sql = "SELECT * FROM gracz WHERE name='".$_POST["name"]."'";
+$arr["mySQLquery0"]=$sql;
+$result = mysqli_query($conn, $sql);
+if ($result === false) {
+	//error
+	$arr["dbq0e1"]="QUERYERROR\n";
+	$arr["dbq0e2"]=mysqli_error($conn);
+}
+else {
+	//success
+	$arr["dbq0s"]= "QUERYSUCCESS";
+}
+$uprawnieniaPrawidlowe=false;
+if ($result->num_rows > 0) {
+		// output data of each row
+		while($row = $result->fetch_assoc()) {
+			if($row["pswd"]===$_POST["pswd"])
+			{
+				$arr["status"]="OK";
+				if($row["uprawnienia"]=='admin')
+				{
+					$uprawnieniaPrawidlowe=true;
+				}
+				else
+				{
+					$arr["uprawnienia"]="NONADMIN";
+				}
+			}
+			else
+			{
+				$arr["status"]="WRONGPSWD";
+			}
+		}
+	} else {
+		$arr["status"]="NOSUCHLOGIN";
+	}
+
+if($uprawnieniaPrawidlowe){
 foreach($myFields as $key => $value){
 
 	$sqlFields="CREATE TABLE DanePostaci".$key." ( id INT PRIMARY KEY";
@@ -51,6 +89,7 @@ foreach($myFields as $key => $value){
 		//success
 		$arr["dbq".$key."s"]= "QUERYSUCCESS";
 	}
+}
 }
 mysqli_close($conn);
 

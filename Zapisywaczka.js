@@ -56,9 +56,16 @@ $(document).ready(function(){
 		myOuter="#actual_page ";
 	console.log(myOuter);
 	console.log('strona: '+strona);
+	updated=localStorage["myVersion"]!=$("#myVersion").html();
 	
 	fieldColector=JSON.parse(localStorage.getItem("fieldColector"));
-	if(fieldColector==null)
+	if(updated)
+	{
+		localStorage["myVersion"]=$("#myVersion").html();
+		console.log("myVersion updated");
+		localStorage["fieldColector"]=null;
+	}
+	if(fieldColector==null || updated)
 	{
 		fieldColector={};
 		fieldColector[strona]={};
@@ -74,7 +81,7 @@ $(document).ready(function(){
 		//fieldColector.push(this.id);
 	});
 	
-	if(localStorage['zapisane'+strona]==="true")
+	if(localStorage['zapisane'+strona]==="true" && !updated)
 	{
 		console.log(localStorage.zapisane);
 		$(myOuter+"input").each(function(){
