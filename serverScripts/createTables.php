@@ -7,7 +7,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 
 $arr = array ();
 
-$arr["fields"]=$_POST["fields"];
+//$arr["fields"]=$_POST["fields"];
 
 $myFields=json_decode($_POST["fields"],true);
 
@@ -37,7 +37,7 @@ foreach($myFields as $key => $value){
 		$sqlFields.=", ".$fieldName." TEXT";
 		//$sqlValues.=", '".$fieldValue."'";
 	}
-	$sql=sqlValues.")";
+	$sql=$sqlFields.")";
 	//$sql = "INSERT INTO DanePostaci".." (id, myGenericID0, myGenericID4) VALUES(1,'".$_POST["myGenericID0"]."','".$_POST["myGenericID4"]."')";
 	$arr["mySQLquery".$key]=$sql;
 	$result = mysqli_query($conn, $sql);
