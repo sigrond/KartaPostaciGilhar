@@ -30,3 +30,9 @@ function createTables(){
 			}
 		});
 }
+
+$(document).ready(function(){
+	$("#create_table_button").click(function(){
+		createTables();
+	});
+})
