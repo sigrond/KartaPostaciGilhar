@@ -35,9 +35,9 @@ foreach($myFields as $key => $value){
 	
 	foreach($value as $fieldName => $fieldValue){
 		$sqlFields.=", ".$fieldName;
-		$sqlValues.=", '".$fieldValue."'";
+		$sqlValues.=", `".$fieldValue."`";
 	}
-	$sql=$sqlFields.") ".sqlValues.")";
+	$sql=$sqlFields.") ".$sqlValues.")";
 	//$sql = "INSERT INTO DanePostaci".." (id, myGenericID0, myGenericID4) VALUES(1,'".$_POST["myGenericID0"]."','".$_POST["myGenericID4"]."')";
 	$arr["mySQLquery".$key]=$sql;
 	$result = mysqli_query($conn, $sql);
