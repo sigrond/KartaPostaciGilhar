@@ -30,14 +30,15 @@ if (!$conn) {
 
 foreach($myFields as $key => $value){
 
-	$sqlFields="REPLACE INTO DanePostaci".$key." (id";
-	$sqlValues="VALUES(1";
-	
+	$sqlFields="REPLACE INTO DanePostaci".$key." ( id";
+	$sqlValues="VALUES( 1";
+	$i=0;
 	foreach($value as $fieldName => $fieldValue){
+		//if($i++<20){
 		$sqlFields.=", ".$fieldName;
-		$sqlValues.=", `".$fieldValue."`";
+		$sqlValues.=", '".$fieldValue."'";//}
 	}
-	$sql=$sqlFields.") ".$sqlValues.")";
+	$sql=$sqlFields." ) ".$sqlValues." )";
 	//$sql = "INSERT INTO DanePostaci".." (id, myGenericID0, myGenericID4) VALUES(1,'".$_POST["myGenericID0"]."','".$_POST["myGenericID4"]."')";
 	$arr["mySQLquery".$key]=$sql;
 	$result = mysqli_query($conn, $sql);

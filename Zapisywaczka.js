@@ -21,7 +21,7 @@ function zapiszPostacDoBazy(){
 	$("#debug_div").append("zalogowany: "+sessionStorage.LoggedIn);
 	$("#debug_div").append("<br>login: "+sessionStorage.uname);
 	$("#debug_div").append("<br>hasło: "+sessionStorage.upswd);
-	$("#debug_div").append("<br>obiekt: "+JSON.stringify(fieldColector));
+	$("#debug_div").append("<br>obiekt: <code>"+JSON.stringify(fieldColector)+"</code><br>");
 	$.post({
 			url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/zapiszDanePostaci.php',
 			crossDomain: true,
