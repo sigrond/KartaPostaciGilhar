@@ -63,12 +63,19 @@ if ($result->num_rows > 0) {
 if($uprawnieniaPrawidlowe){
 foreach($myFields as $key => $value){
 
-	$sqlFields="id";
+	$sqlFields="";
 	//$sqlValues="VALUES( ".$id_gracza;
 	$i=0;
+	reset($value);
+	$first = key($value);
 	foreach($value as $fieldName => $fieldValue){
 		//if($i++<20){
-		$sqlFields.=", ".$fieldName;
+		if($fieldName===$first){
+			$sqlFields.=$fieldName;
+		}
+		else{
+			$sqlFields.=", ".$fieldName;
+		}
 		//$sqlValues.=", '".$fieldValue."'";//}
 	}
 	$sql="SELECT ".$sqlFields." FROM DanePostaci".$key." WHERE id='".$id_gracza."'";
