@@ -197,6 +197,11 @@ input[type="text"],input[type="number"]{
 	width: 200px;
 }
 
+.Akt{
+	padding-left: 40px;
+	width: 220px;
+}
+
 .max{
 	padding-left: 60px;
 	margin-left:100px;
