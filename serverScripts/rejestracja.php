@@ -24,7 +24,7 @@ if (!$conn) {
 	$arr["dbce2"]=mysqli_connect_error();
 }
 
-$sql = "SELECT EXISTS(SELECT 1 FROM gracz WHERE name='".$_POST["name"]."' LIMIT 1)";
+$sql = "SELECT 1 FROM gracz WHERE name='".$_POST["name"]."' LIMIT 1";
 $arr["mySQLquery0"]=$sql;
 $result = mysqli_query($conn, $sql);
 if ($result === false) {
@@ -41,20 +41,12 @@ $id_gracza=0;
 if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			if($row[0]==1)
-			{
-				$arr["status"]="OK";
-				$uprawnieniaPrawidlowe=true;
-				//$id_gracza=$row["id"];
-			}
-			else
-			{
-				$arr["status"]="LOGINALREADYEXISTS";
-			}
+			$arr["status"]="LOGINALREADYEXISTS";
 		}
-	} else {
-		$arr["status"]="NORESULTS";
-	}
+} else {
+	$arr["status"]="NORESULTS";
+	$uprawnieniaPrawidlowe=true;
+}
 
 if($uprawnieniaPrawidlowe){
 	$mySalt=mcrypt_create_iv(22);
@@ -63,7 +55,7 @@ if($uprawnieniaPrawidlowe){
 		'salt' => $mySalt
 	];
 	$sql="INSERT INTO gracz (name, pswd, mail, salt) VALUES ('".$_POST["name"]."', '".password_hash($_POST["pswd"], PASSWORD_BCRYPT, $options)."', '".$_POST["mail"]."', '".$mySalt."')";
-	$arr["mySQLquery1"]=$sql;//po otwarciu do użytku koniecznie zakomentować - dobrze wiem jak to się skończy ;(
+	//$arr["mySQLquery1"]=$sql;//po otwarciu do użytku koniecznie zakomentować - dobrze wiem jak to się skończy ;(
 	$result = mysqli_query($conn, $sql);
 
 	if ($result === false) {

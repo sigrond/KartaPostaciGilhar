@@ -30,7 +30,7 @@ if(isset($_GET["name"]) && isset($_GET["pswd"]))
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			if($row["pswd"]===$_GET["pswd"])
+			if(password_verify($_GET["pswd"], $row["pswd"]))
 			{
 				$arr["status"]="OK";
 			}
