@@ -122,6 +122,43 @@ function w3_close() {
 	$("#my_object").css("width", 1/scale*100+"%");
 	$("#my_object").css("height", 1/scale*100+"%");
 }
+
+function InstallPage(data, i)
+{
+	strona=i;
+	$("#extra_scripts").html("");
+	
+	var dom = $(data);
+	
+	$("#actual_page").html($.parseHTML(data));
+	
+	scriptsExecutionOrderGuard=new Array();
+
+	dom.filter('script').each(function(index, value){
+		scriptsExecutionOrderGuard[index]=false;
+		if(this.src) {
+			var script = document.createElement('script'), i, attrName, attrValue, attrs = this.attributes;
+			for(i = 0; i < attrs.length; i++) {
+				attrName = attrs[i].name;
+				attrValue = attrs[i].value;
+				script[attrName] = attrValue;
+			}
+			document.getElementById("extra_scripts").appendChild(script);
+
+			console.log("script src: "+attrValue);
+			scriptsExecutionOrderGuard[index]=true;
+		} else {
+			while(index>0 && scriptsExecutionOrderGuard[index-1]!=true) setTimeout(function(){},100);
+			var script = document.createElement('script');
+			script.text=(this.text || this.textContent || this.innerHTML || '');
+			document.getElementById("extra_scripts").appendChild(script);
+
+			console.log("script text");
+			scriptsExecutionOrderGuard[index]=true;
+		}
+	});
+}
+
 function pokaz(i){
 	//$("#actual_page").html('<iframe id="my_object" type="text/html" src="'+i+'.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
 	$.get({
@@ -133,65 +170,12 @@ function pokaz(i){
 		success: function(json) {
 			console.log(json);
 			
-			strona=i;
-			$("#extra_scripts").html("");
+			InstallPage(json.data, i);
 			
-			var dom = $(json.data);
-			
-			$("#actual_page").html($.parseHTML(json.data));
-			
-			scriptsExecutionOrderGuard=new Array();
-
-			dom.filter('script').each(function(index, value){
-				scriptsExecutionOrderGuard[index]=false;
-				if(this.src) {
-					var script = document.createElement('script'), i, attrName, attrValue, attrs = this.attributes;
-					for(i = 0; i < attrs.length; i++) {
-						attrName = attrs[i].name;
-						attrValue = attrs[i].value;
-						script[attrName] = attrValue;
-					}
-					document.getElementById("extra_scripts").appendChild(script);
-					//$.getScript('http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue);
-					/*$.ajax({
-						url: 'http://projektgil.cba.pl/KartaPostaciGilhar/'+attrValue,
-						async: true,
-						dataType: 'script',
-						success: function(data, textStatus, jqxhr){
-							eval(data);
-							console.log('eval('+data+');');
-							console.log(data);
-							console.log(textStatus);
-							console.log(jqxhr);
-							scriptsExecutionOrderGuard[index]=true;
-						},
-						error: function(jqXHR, textStatus, errorThrown){
-							console.log(jqXHR);
-							console.log(textStatus);
-							console.log(errorThrown);
-						}
-					});*/
-					console.log("script src: "+attrValue);
-					scriptsExecutionOrderGuard[index]=true;
-				} else {
-					while(index>0 && scriptsExecutionOrderGuard[index-1]!=true) setTimeout(function(){},100);
-					var script = document.createElement('script');
-					script.text=(this.text || this.textContent || this.innerHTML || '');
-					document.getElementById("extra_scripts").appendChild(script);
-					//$("#extra_scripts").append('<script>'+(this.text || this.textContent || this.innerHTML || ''));
-					//$("#extra_scripts").append('<\/script>');
-					//$.globalEval(this.text || this.textContent || this.innerHTML || '');
-					console.log("script text");
-					scriptsExecutionOrderGuard[index]=true;
-				}
-			});
-			
-			
-			//eval($(json.data).find('script').html());
 			localStorage.setItem("page"+i, json.data);
 		},
 		error: function() {
-			$("#actual_page").html(localStorage.getItem("page"+i));
+			InstallPage(localStorage.getItem("page"+i), i);
 		}
 	});
 	var scale=$(window).width()/909;
