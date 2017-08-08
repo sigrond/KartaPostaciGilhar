@@ -1,8 +1,12 @@
 <!DOCTYPE html >
-<html lang="en">
+<html lang="pl">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
+<script src="jquery.min.js"></script>
+<script src="Zapisywaczka.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="3.css">
 </head>
 
 <body style="margin: 0;">
@@ -29,39 +33,6 @@
 <!-- End shared CSS values -->
 
 
-<!-- Begin inline CSS -->
-<style type="text/css" >
-
-#t1_3{left:48px;top:141px;letter-spacing:-0.1px;}
-#t2_3{left:602px;top:141px;letter-spacing:-0.2px;}
-#t3_3{left:282px;top:27px;}
-#t4_3{left:61px;top:77px;letter-spacing:0.2px;}
-#t5_3{left:30px;top:246px;letter-spacing:0.3px;}
-#t6_3{left:152px;top:246px;}
-#t7_3{left:576px;top:246px;letter-spacing:0.1px;}
-#t8_3{left:801px;top:246px;letter-spacing:-1px;}
-
-.s1_3{
-	FONT-SIZE: 97.8px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s2_3{
-	FONT-SIZE: 171.1px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s3_3{
-	FONT-SIZE: 85.6px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-</style>
-<!-- End inline CSS -->
-
 <!-- Begin embedded font definitions -->
 <style id="fonts3" type="text/css" >
 
@@ -80,14 +51,191 @@
 
 
 <!-- Begin text definitions (Positioned/styled in CSS) -->
-<div id="t1_3" class="t s1_3">Monety </div>
-<div id="t2_3" class="t s1_3">Udźwig</div>
+<div id="t1_3" class="t s1_3">Monety <br><input id="monety" type="text" size="18" value="0"></div>
+<div id="t2_3" class="t s1_3">Udźwig <br><input id="udzwig_akt" type="text" size="8" value="0"><input id="udzwig_max" type="text" size="8" value="0"></div>
 <div id="t3_3" class="t s2_3">Ekwipunek </div>
 <div id="t4_3" class="t s3_3">Gracz:</div>
 <div id="t5_3" class="t s3_3">Ilość </div>
 <div id="t6_3" class="t s3_3">Przedmiot </div>
 <div id="t7_3" class="t s3_3">Stan </div>
 <div id="t8_3" class="t s3_3">Waga </div>
+<table id="tab_eq1" class="t s3_3">
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_eq1_K1 tab_eq1_W" value="0"></td>
+		<td><input type="text" class="tab_eq1_K2 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K3 tab_eq1_W"></td>
+		<td><input type="text" class="tab_eq1_K4 tab_eq1_W"></td>
+	</tr>
+</table>
 
 <!-- End text definitions -->
 

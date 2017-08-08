@@ -1,0 +1,59 @@
+#t1_3{left:48px;top:141px;letter-spacing:-0.1px;}
+#t2_3{left:602px;top:141px;letter-spacing:-0.2px;}
+#t3_3{left:282px;top:27px;}
+#t4_3{left:61px;top:77px;letter-spacing:0.2px;}
+#t5_3{left:30px;top:246px;letter-spacing:0.3px;}
+#t6_3{left:152px;top:246px;}
+#t7_3{left:576px;top:246px;letter-spacing:0.1px;}
+#t8_3{left:801px;top:246px;letter-spacing:-1px;}
+
+#udzwig_akt{
+	margin-right: 50px;
+}
+
+#tab_eq1{
+	left:18px;
+	top:275px;
+	letter-spacing:0.1px;
+}
+
+.s1_3{
+	FONT-SIZE: 97.8px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_3{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s3_3{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+.tab_eq1_W{
+	height:99px;
+}
+.tab_eq1_K1{
+	width:474px;
+	text-align:center;
+}
+.tab_eq1_K2{
+	width:1692px;
+}
+.tab_eq1_K3{
+	width:900px;
+}
+.tab_eq1_K4{
+	width:420px;
+	text-align:center;
+}
