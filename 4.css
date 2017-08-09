@@ -1,0 +1,47 @@
+#t1_4{left:337px;top:27px;}
+#t2_4{left:50px;top:246px;letter-spacing:0.3px;}
+#t3_4{left:293px;top:248px;letter-spacing:-0.1px;}
+#t4_4{left:648px;top:246px;letter-spacing:0.2px;}
+#t5_4{left:807px;top:246px;letter-spacing:-1px;}
+
+#tab_eq2{
+	left:18px;
+	top:275px;
+	letter-spacing:0.1px;
+}
+
+.s1_4{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_4{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+.tab_eq2_W{
+	height:99px;
+}
+.tab_eq2_K1{
+	width:474px;
+	text-align:center;
+}
+.tab_eq2_K2{
+	width:1692px;
+}
+.tab_eq2_K3{
+	width:900px;
+}
+.tab_eq2_K4{
+	width:420px;
+	text-align:center;
+}

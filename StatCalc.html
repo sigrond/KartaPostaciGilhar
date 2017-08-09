@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html lang="pl">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+<script src="jquery.min.js"></script>
+<script src="StatCalc.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body style="margin: 0;">
+<div class="w3-container">
+<div class="w3-container w3-center">
+	<h2>Kalkulator cen statystyk</h2>
+</div>
+<div class="w3-row-padding">
+<form class="w3-container w3-border w3-col s6 w3-center w3-card-4">
+	<label class="w3-text-blue">Stata z:</label>
+	<input id="stata_z" type="number" class="w3-input w3-border" value="0">
+	<label class="w3-text-blue">Stata na:</label>
+	<input id="stata_na" type="number" class="w3-input w3-border" value="0">
+	<label class="w3-text-blue">Modyfikator:</label>
+	<input id="stata_mod" type="number" class="w3-input w3-border" value="0">
+	<label class="w3-text-blue">Obwody / Witalność:</label>
+	<input id="stata_obw" type="checkbox" class="w3-check w3-border">
+</form>
+<div class="w3-col s6 w3-center w3-border w3-card-4">
+	<h3>Koszt:</h3>
+	<div id="koszt">0</div>
+</div>
+</div>
+</div>
+</body>
+</html>
