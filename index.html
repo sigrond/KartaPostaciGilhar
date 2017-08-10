@@ -36,7 +36,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item" id="myVersion">v.0.3.3alpha.30</i>
+	<i class="w3-bar-item" id="myVersion">v.0.3.3alpha.31</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 100;">
@@ -67,6 +67,10 @@
 	</div>
 </div>
 
+<div id="myBarDiv" class="w3-light-grey" style="display: none;">
+	<div id="myBar" class="w3-container w3-green" style="height:24px;width:1%"></div>
+</div>
+
 <div id="extra_scripts"></div>
 
 <div id="actual_page"  style="width:100%; height:400%; background-color:lightcyan; float:left; -webkit-transform-origin: top left;"></div>
@@ -74,6 +78,8 @@
 </div>
 
 <script>
+pagesList=['1','2','3','4','5','6','7','8','9','10','11','12','13','KregiMagii','StatCalc','Rejestracja','AdminPanel'];
+
 function w3_open() {
 	//document.getElementById("main").style.marginLeft = "20%";
 	document.getElementById("mySidebar").style.width = "20%";
@@ -157,6 +163,31 @@ function InstallPage(data, i)
 			scriptsExecutionOrderGuard[index]=true;
 		}
 	});
+}
+
+function DownloadPages(){
+	$("#myBarDiv").show();
+	var width=1;
+	pagesList.forEach(function(ind,val,arr){
+		if(localStorage["page"+val]===undefined)
+		{
+			$.get({
+				url: String('http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/getPage.php?page='+val),
+				dataType: 'jsonp',
+				crossDomain:'true',
+				success: function(json) {
+					localStorage.setItem("page"+val, json.data);
+					InstallPage(json.data, val);
+				},
+				error: function() {
+					console.log("Nie udało się pobrać strony: "+val);
+				}
+			});
+		}
+		width+=100/arr.length;
+		$("#myBar").width(width);
+	});
+	$("#myBarDiv").hide();
 }
 
 function pokaz(i){
@@ -267,6 +298,7 @@ $(document).ready(function(){
 <!--<div id="actual_page" style="width:100%; height:100%; background-color:cyan; float:left;"></div>-->
 <script>
 	//$("#actual_page").html('<iframe id="my_object" type="text/html" src="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
+	DownloadPages();
 	pokaz(1);
 	/*console.log($("#my_object").contents());
 	$("#my_object").ready(function(){
