@@ -15,7 +15,10 @@ function zapisz(nazwa, wartosc){
 
 function wczytaj(nazwa){
 	//return localStorage.getItem(String(nazwa));
-	return fieldColector[strona][String(nazwa)];
+	var val=fieldColector[strona][String(nazwa)];
+	if(val==undefined)
+		return "";
+	return val;
 }
 
 function zapiszPostacDoBazy(){

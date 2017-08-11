@@ -1,0 +1,89 @@
+#t1_5{left:70px;top:83px;letter-spacing:-0.4px;word-spacing:0.2px;}
+#t2_5{left:103px;top:112px;letter-spacing:-0.7px;word-spacing:-0.3px;}
+#t3_5{left:93px;top:140px;letter-spacing:-0.3px;word-spacing:-0.5px;}
+#t4_5{left:351px;top:27px;letter-spacing:-0.1px;}
+#t5_5{left:71px;top:55px;letter-spacing:0.1px;}
+#t6_5{left:35px;top:185px;letter-spacing:0.1px;word-spacing:49.5px;}
+#t7_5{left:274px;top:185px;letter-spacing:0.2px;}
+#t8_5{left:686px;top:185px;}
+#t9_5{left:38px;top:687px;}
+#ta_5{left:692px;top:687px;letter-spacing:0.1px;}
+#tb_5{left:104px;top:687px;letter-spacing:0.2px;}
+#tc_5{left:271px;top:687px;letter-spacing:0.1px;}
+#td_5{left:598px;top:687px;letter-spacing:0.2px;}
+
+#tab_alch1{
+	left:18px;
+	top:216px;
+	letter-spacing:0.1px;
+}
+
+#tab_alch2{
+	left:18px;
+	top:720px;
+	letter-spacing:0.1px;
+}
+
+
+.s1_5{
+	FONT-SIZE: 97.8px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_5{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s3_5{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+.tab_alch1_W{
+	height:99px;
+}
+.tab_alch1_K1{
+	width:288px;
+	text-align:center;
+}
+.tab_alch1_K2{
+	width:665px;
+}
+.tab_alch1_K3{
+	width:1665px;
+}
+.tab_alch1_K4{
+	width:885px;
+	text-align:center;
+}
+
+.tab_alch2_W{
+	height:99px;
+}
+.tab_alch2_K1{
+	width:288px;
+	text-align:center;
+}
+.tab_alch2_K2{
+	width:665px;
+}
+.tab_alch2_K3{
+	width:1180px;
+}
+.tab_alch2_K4{
+	width:490px;
+	text-align:center;
+}
+.tab_alch2_K5{
+	width:875px;
+	text-align:center;
+}
