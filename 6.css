@@ -1,0 +1,139 @@
+#t1_6{left:43px;top:171px;letter-spacing:-1.4px;}
+#t2_6{left:455px;top:394px;letter-spacing:-0.9px;}
+#t3_6{left:48px;top:647px;letter-spacing:-0.8px;}
+#t4_6{left:315px;top:972px;}
+#t5_6{left:512px;top:700px;letter-spacing:0.1px;word-spacing:0.1px;}
+#t6_6{left:374px;top:53px;letter-spacing:-0.7px;}
+#t7_6{left:40px;top:116px;letter-spacing:0.1px;}
+#t8_6{left:213px;top:933px;word-spacing:-0.1px;}
+#t9_6{left:41px;top:216px;}
+#ta_6{left:128px;top:216px;letter-spacing:-1.8px;}
+#tb_6{left:206px;top:216px;}
+#tc_6{left:284px;top:216px;letter-spacing:0.1px;}
+
+#tab_elementy{
+	left:600px;
+	top:315px;
+}
+
+#tab_formy{
+	left:48px;
+	top:680px;
+}
+
+#tab_specjalne{
+	left:512px;
+	top:730px;
+}
+
+#tab_bazy{
+	left:21px;
+	top:242px;
+}
+
+#tab_mistrz{
+	left:429px;
+	top:942px;
+}
+
+#tab_umiejetnosci{
+	left:20px;
+	top:1020px;
+}
+
+.s1_6{
+	FONT-SIZE: 110px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_6{
+	FONT-SIZE: 134.4px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s3_6{
+	FONT-SIZE: 122.2px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s4_6{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s5_6{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+
+.tab_elementy_W{
+	height:99px;
+	FONT-SIZE: 60px;
+	letter-spacing:-1.8px;
+	word-spacing:-0.1px;
+}
+.tab_elementy_K1{
+	width:1000px;
+}
+
+.tab_formy_W{
+	height:99px;
+}
+.tab_formy_K1{
+	width:1400px;
+}
+
+.tab_specjalne_W{
+	height:99px;
+	FONT-SIZE: 60px;
+	letter-spacing:-1.8px;
+	word-spacing:-0.1px;
+}
+.tab_specjalne_K1{
+	width:1400px;
+}
+
+.tab_bazy_W{
+	height:99px;
+}
+.tab_bazy_K1{
+	width:400px;
+	text-align:center;
+}
+.tab_bazy_K2{
+	width:305px;
+	text-align:center;
+}
+.tab_bazy_K3{
+	width:295px;
+	text-align:center;
+}
+.tab_bazy_K4{
+	width:300px;
+	text-align:center;
+}
+
+.m2-check{
+	width:90px;
+	height:90px;
+	margin-right:45px;
+}
+
+.tab_umiejetnosci_W{
+	height:99px;
+}
+.tab_umiejetnosci_K1{
+	width:3500px;
+}
+

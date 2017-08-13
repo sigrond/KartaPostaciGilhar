@@ -1,8 +1,12 @@
 <!DOCTYPE html >
-<html lang="en">
+<html lang="pl">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
+<script src="jquery.min.js"></script>
+<script src="Zapisywaczka.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="6.css">
 </head>
 
 <body style="margin: 0;">
@@ -29,55 +33,6 @@
 <!-- End shared CSS values -->
 
 
-<!-- Begin inline CSS -->
-<style type="text/css" >
-
-#t1_6{left:43px;top:171px;letter-spacing:-1.4px;}
-#t2_6{left:455px;top:394px;letter-spacing:-0.9px;}
-#t3_6{left:48px;top:647px;letter-spacing:-0.8px;}
-#t4_6{left:315px;top:972px;}
-#t5_6{left:512px;top:700px;letter-spacing:0.1px;word-spacing:0.1px;}
-#t6_6{left:374px;top:53px;letter-spacing:-0.7px;}
-#t7_6{left:40px;top:116px;letter-spacing:0.1px;}
-#t8_6{left:213px;top:933px;word-spacing:-0.1px;}
-#t9_6{left:41px;top:216px;}
-#ta_6{left:128px;top:216px;letter-spacing:-1.8px;}
-#tb_6{left:206px;top:216px;}
-#tc_6{left:284px;top:216px;letter-spacing:0.1px;}
-
-.s1_6{
-	FONT-SIZE: 110px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s2_6{
-	FONT-SIZE: 134.4px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s3_6{
-	FONT-SIZE: 122.2px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s4_6{
-	FONT-SIZE: 171.1px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s5_6{
-	FONT-SIZE: 85.6px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-</style>
-<!-- End inline CSS -->
-
 <!-- Begin embedded font definitions -->
 <style id="fonts6" type="text/css" >
 
@@ -98,16 +53,179 @@
 <!-- Begin text definitions (Positioned/styled in CSS) -->
 <div id="t1_6" class="t s1_6">Bazy: </div>
 <div id="t2_6" class="t s1_6">Elementy: </div>
+<table id="tab_elementy" class="t s5_6">
+	<tr>
+		<td>1. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+	<tr>
+		<td>2. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+	<tr>
+		<td>3. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+	<tr>
+		<td>4. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+	<tr>
+		<td>5. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+	<tr>
+		<td>6. <input type="text" class="tab_elementy_K1 tab_elementy_W"></td>
+	</tr>
+</table>
 <div id="t3_6" class="t s1_6">Forma: </div>
+<table id="tab_formy" class="t s5_6">
+	<tr>
+		<td>1. <input type="text" class="tab_formy_K1 tab_formy_W" value="Pusty"></td>
+	</tr>
+	<tr>
+		<td>2. <input type="text" class="tab_formy_K1 tab_formy_W"></td>
+	</tr>
+	<tr>
+		<td>3. <input type="text" class="tab_formy_K1 tab_formy_W"></td>
+	</tr>
+	<tr>
+		<td>4. <input type="text" class="tab_formy_K1 tab_formy_W"></td>
+	</tr>
+	<tr>
+		<td>5. <input type="text" class="tab_formy_K1 tab_formy_W"></td>
+	</tr>
+	<tr>
+		<td>6. <input type="text" class="tab_formy_K1 tab_formy_W"></td>
+	</tr>
+</table>
 <div id="t4_6" class="t s2_6">Umiejętności: </div>
+<table id="tab_umiejetnosci" class="t s5_6">
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_umiejetnosci_K1 tab_umiejetnosci_W"></td>
+	</tr>
+</table>
 <div id="t5_6" class="t s3_6">Efekty Specjalne: </div>
+<table id="tab_specjalne" class="t s5_6">
+	<tr>
+		<td>1. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+	<tr>
+		<td>2. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+	<tr>
+		<td>3. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+	<tr>
+		<td>4. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+	<tr>
+		<td>5. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+	<tr>
+		<td>6. <input type="text" class="tab_specjalne_K1 tab_specjalne_W"></td>
+	</tr>
+</table>
 <div id="t6_6" class="t s4_6">Pieczęci</div>
 <div id="t7_6" class="t s5_6">Gracz: </div>
 <div id="t8_6" class="t s1_6">Mistrz pieczęci: </div>
+<table id="tab_mistrz" class="t">
+	<tr>
+		<th><input type="checkbox" class="m2-check"></th>
+		<th><input type="checkbox" class="m2-check"></th>
+		<th><input type="checkbox" class="m2-check"></th>
+		<th><input type="checkbox" class="m2-check"></th>
+		<th><input type="checkbox" class="m2-check"></th>
+	</tr>
+</table>
 <div id="t9_6" class="t s1_6">Elem.</div>
 <div id="ta_6" class="t s1_6">Form</div>
 <div id="tb_6" class="t s1_6">Spe.</div>
 <div id="tc_6" class="t s1_6">Czas</div>
+<table id="tab_bazy" class="t s5_6">
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W" value="1"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W" value="1"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W" value="0"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W" value="3"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_bazy_K1 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K2 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K3 tab_bazy_W"></td>
+		<td><input type="text" class="tab_bazy_K4 tab_bazy_W"></td>
+	</tr>
+</table
 
 <!-- End text definitions -->
 
