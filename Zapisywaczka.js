@@ -78,6 +78,13 @@ function wczytajPostacZBazy(){
 						localStorage.setItem('fieldColector', JSON.stringify(fieldColector));
 						$(myOuter+"input").each(function(){
 							this.value=wczytaj(this.id);//wczytanie wszystkich wartości
+							if(this.type=="checkbox")
+							{
+								if(this.value=="on")
+									$(this).prop('checked', true);
+								else
+									$(this).prop('checked', false);
+							}
 						});
 					}
 				});
@@ -123,6 +130,13 @@ $(document).ready(function(){
 	$(myOuter+"input").each(function(){
 		if(!this.id)
 			this.id="myGenericID"+strona+"s"+i++;//tworzenie id dla pól które ich nie mają
+		if(this.type=="checkbox")
+		{
+			if(this.value=="on")
+				$(this).prop('checked', true);
+			else
+				$(this).prop('checked', false);
+		}
 		//console.log(this.id);
 		//fieldColector.push(this.id);
 	});
@@ -132,6 +146,13 @@ $(document).ready(function(){
 		console.log(localStorage.zapisane);
 		$(myOuter+"input").each(function(){
 			this.value=wczytaj(this.id);//wczytanie wszystkich wartości
+			if(this.type=="checkbox")
+			{
+				if(this.value=="on")
+					$(this).prop('checked', true);
+				else
+					$(this).prop('checked', false);
+			}
 		});
 	}
 	else
@@ -170,6 +191,10 @@ $(document).ready(function(){
 	}
 	
 	$(myOuter+"input").change(function(){
+		if(this.checked)
+			this.value="on";
+		else
+			this.value="off";
 		zapisz(this.id, this.value);//zapis pojedyńczej zmienionej wartości
 	});
 });
