@@ -33,6 +33,7 @@ function zapiszPostacDoBazy(){
 			contentType: "application/x-www-form-urlencoded",//bo czemy niby application/json miało by poprawnie działać z POST jak opisano w standardzie
 			data: {
 				fields: JSON.stringify(fieldColector),
+				hash: MD5(JSON.stringify(fieldColector)),
 				name: sessionStorage.uname,
 				pswd: sessionStorage.upswd
 				},
@@ -49,6 +50,40 @@ function zapiszPostacDoBazy(){
 				console.log(responseData);
 				console.log(textStatus);
 				console.log(errorThrown);
+			}
+		});
+}
+
+function sprawdzSynchronizacje(){
+	$.post({
+			url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/sprawdzSynchronizacje.php',
+			crossDomain: true,
+			dataType: 'json',
+			contentType: "application/x-www-form-urlencoded",//bo czemy niby application/json miało by poprawnie działać z POST jak opisano w standardzie
+			data: {
+				name: sessionStorage.uname,
+				pswd: sessionStorage.upswd
+				},
+			success: function (json) {
+				//console.log(json);
+				$.each(json,function(i,v){
+					console.log(i);
+					if(i==='hash')
+					{
+						if(v==MD5(JSON.stringify(fieldColector)))
+							$("#sync_status").addClass('w3-green').removeClass('w3-yellow').removeClass('w3-red').removeClass('w3-orange');
+						else
+							$("#sync_status").addClass('w3-red').removeClass('w3-yellow').removeClass('w3-green').removeClass('w3-orange');
+					}
+				});
+				
+			},
+			error: function (responseData, textStatus, errorThrown) {
+				alert('POST failed.');
+				console.log(responseData);
+				console.log(textStatus);
+				console.log(errorThrown);
+				$("#sync_status").addClass('w3-orange').removeClass('w3-yellow').removeClass('w3-red').removeClass('w3-green');
 			}
 		});
 }
@@ -88,7 +123,7 @@ function wczytajPostacZBazy(){
 						});
 					}
 				});
-				$("#sync_status").addClass('w3-green').removeClass('w3-yellow');
+				sprawdzSynchronizacje();
 				//console.log(myStr);
 				//$("#debug_response1").html(myStr);
 			},
@@ -100,6 +135,8 @@ function wczytajPostacZBazy(){
 			}
 		});
 }
+
+
 
 $(document).ready(function(){
 	var i=0;
@@ -141,6 +178,8 @@ $(document).ready(function(){
 		//console.log(this.id);
 		//fieldColector.push(this.id);
 	});
+	
+	sprawdzSynchronizacje();
 	
 	if(localStorage['zapisane'+strona]==="true" && !updated)
 	{
@@ -192,10 +231,14 @@ $(document).ready(function(){
 	}
 	
 	$(myOuter+"input").change(function(){
-		if(this.checked)
-			this.value="on";
-		else
-			this.value="off";
+		if(this.type=="checkbox")
+		{
+			if(this.checked)
+				this.value="on";
+			else
+				this.value="off";
+		}
 		zapisz(this.id, this.value);//zapis pojedyńczej zmienionej wartości
+		sprawdzSynchronizacje();
 	});
 });

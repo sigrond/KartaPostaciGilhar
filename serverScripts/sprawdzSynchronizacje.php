@@ -7,10 +7,6 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 
 $arr = array ();
 
-//$arr["fields"]=$_POST["fields"];
-
-$myFields=json_decode($_POST["fields"],true);
-
 
 
 $servername = "mysql.cba.pl";
@@ -56,50 +52,33 @@ if ($result->num_rows > 0) {
 				$arr["status"]="WRONGPSWD";
 			}
 		}
-	} else {
-		$arr["status"]="NOSUCHLOGIN";
-	}
+} else {
+	$arr["status"]="NOSUCHLOGIN";
+}
 
 if($uprawnieniaPrawidlowe){
-foreach($myFields as $key => $value){
-
-	$sqlFields="REPLACE INTO DanePostaci".$key." ( id";
-	$sqlValues="VALUES( ".$id_gracza;
-	$i=0;
-	foreach($value as $fieldName => $fieldValue){
-		//if($i++<20){
-		$sqlFields.=", `".$fieldName."`";
-		$sqlValues.=", '".$fieldValue."'";//}
-	}
-	$sql=$sqlFields." ) ".$sqlValues." )";
+	//chyba można by yżywać wcześniejszego zapytania
+	$sql="SELECT hash FROM gracz WHERE id='".$id_gracza."'";
 	//$sql = "INSERT INTO DanePostaci".." (id, myGenericID0, myGenericID4) VALUES(1,'".$_POST["myGenericID0"]."','".$_POST["myGenericID4"]."')";
-	$arr["mySQLquery".$key]=$sql;
+	$arr["mySQLquery"]=$sql;
 	$result = mysqli_query($conn, $sql);
 
 	if ($result === false) {
 		//error
-		$arr["dbq".$key."e1"]="QUERYERROR\n";
-		$arr["dbq".$key."e2"]=mysqli_error($conn);
+		$arr["dbqe1"]="QUERYERROR\n";
+		$arr["dbqe2"]=mysqli_error($conn);
 	}
 	else {
 		//success
-		$arr["dbq".$key."s"]= "QUERYSUCCESS";
+		$arr["dbqs"]= "QUERYSUCCESS";
+	}
+	if ($result->num_rows > 0) {
+		// output data of each row
+		$row = $result->fetch_assoc();
+		$arr["hash"]=$row["hash"];
 	}
 }
-$sql="UPDATE gracz SET hash = '".$_POST["hash"]."' WHERE id = ".$id_gracza;
-$arr["mySQLqueryH"]=$sql;
-$result = mysqli_query($conn, $sql);
 
-if ($result === false) {
-	//error
-	$arr["dbqHe1"]="QUERYERROR\n";
-	$arr["dbqHe2"]=mysqli_error($conn);
-}
-else {
-	//success
-	$arr["dbqHs"]= "QUERYSUCCESS";
-}
-}
 mysqli_close($conn);
 
 echo json_encode($arr);
