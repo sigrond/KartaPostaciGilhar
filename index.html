@@ -33,10 +33,11 @@
 <div class="w3-main w3-mobile" id="main" style="-webkit-transform-origin: top left;">
 
 <div class="w3-bar w3-teal">
-	<button class="w3-button w3-teal w3-xlarge w3-bar-item" onclick="w3_open()">
+	<button class="w3-button w3-teal w3-xlarge w3-bar-item w3-card-4" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item" id="myVersion">v.0.3.3alpha.46</i>
+	<i class="w3-bar-item" id="myVersion">v.0.3.3alpha.55</i>
+	<div id="sync_status" class="w3-bar-item w3-card-4 w3-yellow material-icons" style="float:right;">cached</div>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 100;">
@@ -61,7 +62,7 @@
 		<div class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 100;">
 			<a href="#" class="w3-bar-item w3-button" onclick="pokaz('Rejestracja')">Rejestracja</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="zapiszPostacDoBazy()">Zapisz postać do bazy</a>
-			<a href="#" class="w3-bar-item w3-button" onclick="wczytajPostacZBazy()">Wczytaj postać z bazy</a>
+			<a href="#" class="w3-bar-item w3-button" onclick="DownloadPages(); wczytajPostacZBazy(); $('#myBarDiv').delay(100000).hide(); pokaz(strona);">Wczytaj postać z bazy</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="pokaz('AdminPanel')">Administracja</a>
 		</div>
 	</div>
@@ -189,7 +190,7 @@ function DownloadPages(){
 			}
 			width+=100/arr.length;
 			console.log("myBar width: "+width);
-			$("#myBar").delay(100).width(width+"%");
+			$("#myBar").delay(10000).width(width+"%");
 		});
 	});
 }
@@ -305,7 +306,7 @@ $(document).ready(function(){
 	DownloadPages();
 	$(document).ready(function(){
 		pokaz(1);
-		$("#myBarDiv").delay(10000).hide();
+		$("#myBarDiv").delay(100000).hide();
 	});
 	/*console.log($("#my_object").contents());
 	$("#my_object").ready(function(){

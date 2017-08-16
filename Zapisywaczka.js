@@ -65,7 +65,7 @@ function wczytajPostacZBazy(){
 				pswd: sessionStorage.upswd
 				},
 			success: function (json) {
-				console.log(json);
+				//console.log(json);
 				var myStr=String("");
 				$.each(json,function(i,v){
 					console.log(i);
@@ -88,8 +88,9 @@ function wczytajPostacZBazy(){
 						});
 					}
 				});
+				$("#sync_status").addClass('w3-green').removeClass('w3-yellow');
 				//console.log(myStr);
-				$("#debug_response1").html(myStr);
+				//$("#debug_response1").html(myStr);
 			},
 			error: function (responseData, textStatus, errorThrown) {
 				alert('POST failed.');
