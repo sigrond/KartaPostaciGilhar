@@ -1,3 +1,4 @@
+$.getScript("raphael.min.js");
 $(document).ready(function(){
 	var r=Raphael("canvas", 600, 600);
 	var c0=r.circle(300,300,250);
@@ -406,5 +407,5 @@ $(document).ready(function(){
 				if(!!tmp.g)tmp.g.remove();
 			}
 			
-		});
+		}).delay(10000).change();
 });

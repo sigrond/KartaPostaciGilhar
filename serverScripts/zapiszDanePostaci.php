@@ -68,7 +68,7 @@ foreach($myFields as $key => $value){
 	$i=0;
 	foreach($value as $fieldName => $fieldValue){
 		//if($i++<20){
-		$sqlFields.=", ".$fieldName;
+		$sqlFields.=", `".$fieldName."`";
 		$sqlValues.=", '".$fieldValue."'";//}
 	}
 	$sql=$sqlFields." ) ".$sqlValues." )";

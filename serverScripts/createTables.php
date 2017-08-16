@@ -72,7 +72,7 @@ foreach($myFields as $key => $value){
 	//$sqlValues="VALUES(1";
 	
 	foreach($value as $fieldName => $fieldValue){
-		$sqlFields.=", ".$fieldName." TEXT";
+		$sqlFields.=", `".$fieldName."` TEXT";
 		//$sqlValues.=", '".$fieldValue."'";
 	}
 	$sql=$sqlFields.")";
