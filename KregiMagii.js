@@ -114,119 +114,120 @@ $(document).ready(function(){
 				'stroke-width': 5});
 	
 				
-	$(".glowable").change(function(){
+	$(".glowable").change(function()
+	{
 			switch(this.id){
 				case "magia":
 					var tmp=c0;
-					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):tmp.g.remove();
+					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "W":
 					var tmp=cW;
-					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):tmp.g.remove();
+					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "AO":
 					var tmp=cAO;
-					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):tmp.g.remove();
+					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "M":
 					var tmp=cM;
-					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):tmp.g.remove();
+					this.checked?tmp.g=tmp.glow({color: tmp.attr('stroke'), width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "1":
 					var tmp=t1;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "2":
 					var tmp=t2;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "3":
 					var tmp=t3;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "4":
 					var tmp=t4;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "5":
 					var tmp=t5;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "6":
 					var tmp=t6;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "7":
 					var tmp=t7;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "8":
 					var tmp=t8;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "9":
 					var tmp=t9;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "A":
 					var tmp=tA;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "B":
 					var tmp=tB;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "C":
 					var tmp=tC;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "D":
 					var tmp=tD;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "E":
 					var tmp=tE;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "F":
 					var tmp=tF;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				case "X":
 					var tmp=tX;
 					var rc=r.rect(tmp.getBBox().x-6,tmp.getBBox().y,28,28);
 					rc.attr({opacity: 0});
-					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):tmp.g.remove();
+					this.checked?tmp.g=rc.glow({fill: true,color: '#ccccff', width: 30}):((tmp.g)?tmp.g.remove():0);
 					break;
 				
 			}

@@ -71,7 +71,7 @@ function sprawdzSynchronizacje(){
 					if(i==='hash')
 					{
 						if(v==MD5(JSON.stringify(fieldColector)))
-							$("#sync_status").addClass('w3-green').removeClass('w3-yellow').removeClass('w3-red').removeClass('w3-orange');
+							$("#sync_status").addClass('w3-green').removeClass('w3-yellow').removeClass('w3-red').removeClass('w3-orange').addClass('w3-spin').delay(3000000).removeClass('w3-spin');
 						else
 							$("#sync_status").addClass('w3-red').removeClass('w3-yellow').removeClass('w3-green').removeClass('w3-orange');
 					}

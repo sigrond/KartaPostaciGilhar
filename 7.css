@@ -1,0 +1,143 @@
+#t1_7{left:300px;top:53px;letter-spacing:-0.7px;}
+#t2_7{left:36px;top:116px;letter-spacing:0.1px;}
+#t3_7{left:56px;top:154px;letter-spacing:-0.5px;word-spacing:-0.4px;}
+#t4_7{left:56px;top:193px;letter-spacing:-0.7px;word-spacing:0.1px;}
+#t5_7{left:124px;top:265px;letter-spacing:-0.2px;}
+#t6_7{left:410px;top:262px;letter-spacing:-1.5px;}
+#t7_7{left:526px;top:271px;letter-spacing:-0.1px;}
+#t8_7{left:798px;top:262px;letter-spacing:-1.6px;}
+#t9_7{left:794px;top:291px;}
+#ta_7{left:295px;top:262px;letter-spacing:-0.4px;}
+#tb_7{left:31px;top:869px;letter-spacing:-0.8px;}
+#tc_7{left:685px;top:265px;letter-spacing:-0.1px;}
+#td_7{left:455px;top:869px;letter-spacing:-0.2px;}
+#te_7{left:522px;top:303px;letter-spacing:0.1px;}
+#tf_7{left:627px;top:299px;letter-spacing:0.2px;}
+
+#tab_czaryMR{
+	left:18px;
+	top:330px;
+}
+
+#pamiec1{
+	margin-left: 500px;
+	width: 200px;
+}
+#pamiec2{
+	margin-left: 80px;
+	width: 200px;
+}
+#przedmiot1{
+	margin-left: 420px;
+	width: 200px;
+}
+#przedmiot2{
+	margin-left: 80px;
+	width: 200px;
+}
+
+#tab_pamiec{
+	left:18px;
+	top:900px;
+}
+
+#tab_przedmiot{
+	left:441px;
+	top:900px;
+}
+
+.s1_7{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_7{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s3_7{
+	FONT-SIZE: 134.4px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s4_7{
+	FONT-SIZE: 97.8px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s5_7{
+	FONT-SIZE: 110px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+
+.tab_czaryMR_W{
+	height:99px;
+}
+.tab_czaryMR_K1{
+	width:1030px;
+}
+.tab_czaryMR_K2{
+	width:395px;
+	text-align:center;
+}
+.tab_czaryMR_K3{
+	width:440px;
+	text-align:center;
+}
+.tab_czaryMR_K4{
+	width:540px;
+}
+.tab_czaryMR_K5{
+	width:218px;
+	text-align:center;
+}
+.tab_czaryMR_K6{
+	width:380px;
+	text-align:center;
+}
+.tab_czaryMR_K7{
+	width:480px;
+	text-align:center;
+}
+
+.tab_pamiec_W{
+	height:99px;
+}
+.tab_pamiec_K1{
+	width:1190px;
+}
+.tab_pamiec_K2{
+	width:255px;
+	text-align:center;
+}
+.tab_pamiec_K3{
+	width:240px;
+	text-align:center;
+}
+
+.tab_przedmiot_W{
+	height:99px;
+}
+.tab_przedmiot_K1{
+	width:1250px;
+}
+.tab_przedmiot_K2{
+	width:255px;
+	text-align:center;
+}
+.tab_przedmiot_K3{
+	width:300px;
+	text-align:center;
+}

@@ -39,7 +39,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item w3-card-4" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item" id="myVersion">v.0.3.4alpha.58</i>
+	<i class="w3-bar-item" id="myVersion">v.0.3.5alpha.60</i>
 	<div id="sync_status" class="w3-bar-item w3-card-4 w3-yellow material-icons" style="float:right;">cached</div>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
@@ -67,6 +67,7 @@
 			<a href="#" class="w3-bar-item w3-button" onclick="zapiszPostacDoBazy()">Zapisz postać do bazy</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="DownloadPages(); wczytajPostacZBazy(); $('#myBarDiv').delay(100000).hide(); pokaz(strona);">Wczytaj postać z bazy</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="pokaz('AdminPanel')">Administracja</a>
+			<a href="#" class="w3-bar-item w3-button" onclick="fieldColector={};">Wczyczyść lokalnie</a>
 		</div>
 	</div>
 </div>
@@ -282,6 +283,7 @@ function logowanie(){
 			$("#Haslo").attr("disabled", "disabled");
 			$("#Logowanie").attr("disabled", "disabled");
 			$("#Logowanie").val("Zalogowany!");
+			sprawdzSynchronizacje();
 		}
     }
 	});
@@ -296,6 +298,7 @@ $(document).ready(function(){
 		$("#Haslo").attr("disabled", "disabled");
 		$("#Logowanie").attr("disabled", "disabled");
 		$("#Logowanie").val("Zalogowany!");
+		sprawdzSynchronizacje();
 	}
 })
 
