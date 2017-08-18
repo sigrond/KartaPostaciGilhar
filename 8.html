@@ -1,8 +1,12 @@
 <!DOCTYPE html >
-<html lang="en">
+<html lang="pl">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
+<script src="jquery.min.js"></script>
+<script src="Zapisywaczka.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="8.css">
 </head>
 
 <body style="margin: 0;">
@@ -29,38 +33,6 @@
 <!-- End shared CSS values -->
 
 
-<!-- Begin inline CSS -->
-<style type="text/css" >
-
-#t1_8{left:300px;top:53px;letter-spacing:-0.7px;}
-#t2_8{left:70px;top:170px;letter-spacing:-1px;}
-#t3_8{left:363px;top:167px;letter-spacing:-0.3px;}
-#t4_8{left:751px;top:171px;letter-spacing:-0.1px;}
-#t5_8{left:222px;top:171px;letter-spacing:-0.9px;}
-#t6_8{left:72px;top:127px;letter-spacing:-0.9px;word-spacing:0.3px;}
-#t7_8{left:538px;top:170px;letter-spacing:-0.1px;}
-
-.s1_8{
-	FONT-SIZE: 171.1px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s2_8{
-	FONT-SIZE: 97.8px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s3_8{
-	FONT-SIZE: 110px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-</style>
-<!-- End inline CSS -->
-
 <!-- Begin embedded font definitions -->
 <style id="fonts8" type="text/css" >
 
@@ -84,8 +56,187 @@
 <div id="t3_8" class="t s2_8">Przebieg:</div>
 <div id="t4_8" class="t s2_8">Składniki: </div>
 <div id="t5_8" class="t s2_8">Wartość:</div>
-<div id="t6_8" class="t s3_8">L. Rytuałów: </div>
+<div id="t6_8" class="t s3_8">L. Rytuałów: <input type="text" value="0"></div>
 <div id="t7_8" class="t s2_8">Wymagania:</div>
+
+<table id="tab_rytualy" class="t s2_8">
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_rytualy_K1 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K2 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K3 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K4 tab_rytualy_W"></td>
+		<td><input type="text" class="tab_rytualy_K5 tab_rytualy_W"></td>
+	</tr>
+	
+</table>
 
 <!-- End text definitions -->
 

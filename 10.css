@@ -1,0 +1,31 @@
+#t1_10{left:335px;top:53px;}
+#t2_10{left:36px;top:116px;letter-spacing:0.1px;}
+
+#tab_MKrwi{
+	left:18px;
+	top:146px;
+}
+
+.s1_10{
+	FONT-SIZE: 171.1px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+.s2_10{
+	FONT-SIZE: 85.6px;
+	FONT-FAMILY: DejaVuSans_1g;
+	color: rgb(0,0,0);
+}
+
+input[type="text"],input[type="number"]{
+	border: none;
+	background: transparent;
+}
+
+.tab_MKrwi_W{
+	height:99px;
+}
+.tab_MKrwi_K1{
+	width:3500px;
+}

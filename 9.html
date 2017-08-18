@@ -1,8 +1,12 @@
 <!DOCTYPE html >
-<html lang="en">
+<html lang="pl">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta charset="utf-8" />
+<script src="jquery.min.js"></script>
+<script src="Zapisywaczka.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="9.css">
 </head>
 
 <body style="margin: 0;">
@@ -28,58 +32,6 @@
 </style>
 <!-- End shared CSS values -->
 
-
-<!-- Begin inline CSS -->
-<style type="text/css" >
-
-#t1_9{left:361px;top:53px;}
-#t2_9{left:65px;top:447px;}
-#t3_9{left:396px;top:444px;letter-spacing:-0.1px;}
-#t4_9{left:366px;top:473px;letter-spacing:-0.1px;}
-#t5_9{left:765px;top:449px;letter-spacing:-0.1px;}
-#t6_9{left:296px;top:449px;letter-spacing:-0.2px;}
-#t7_9{left:543px;top:444px;letter-spacing:-0.1px;}
-#t8_9{left:493px;top:475px;letter-spacing:-0.4px;}
-#t9_9{left:30px;top:180px;letter-spacing:-0.1px;}
-#ta_9{left:30px;top:208px;letter-spacing:-0.4px;word-spacing:0.5px;}
-#tb_9{left:30px;top:236px;letter-spacing:-0.1px;}
-#tc_9{left:30px;top:265px;}
-#td_9{left:30px;top:293px;}
-#te_9{left:30px;top:321px;}
-#tf_9{left:30px;top:350px;}
-#tg_9{left:30px;top:378px;}
-#th_9{left:30px;top:406px;}
-#ti_9{left:42px;top:128px;letter-spacing:-2.2px;}
-#tj_9{left:464px;top:180px;letter-spacing:-0.1px;}
-#tk_9{left:464px;top:208px;letter-spacing:-0.5px;}
-#tl_9{left:464px;top:265px;}
-#tm_9{left:464px;top:293px;}
-#tn_9{left:464px;top:321px;}
-#to_9{left:464px;top:350px;}
-#tp_9{left:464px;top:378px;}
-#tq_9{left:464px;top:406px;}
-#tr_9{left:691px;top:449px;letter-spacing:-3.7px;}
-
-.s1_9{
-	FONT-SIZE: 171.1px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s2_9{
-	FONT-SIZE: 97.8px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-.s3_9{
-	FONT-SIZE: 122.2px;
-	FONT-FAMILY: DejaVuSans_1g;
-	color: rgb(0,0,0);
-}
-
-</style>
-<!-- End inline CSS -->
 
 <!-- Begin embedded font definitions -->
 <style id="fonts9" type="text/css" >
@@ -108,24 +60,299 @@
 <div id="t7_9" class="t s2_9">Czas </div>
 <div id="t8_9" class="t s2_9">Powtórzenia:</div>
 <div id="t9_9" class="t s2_9">-Sanktuarium</div>
+<table id="tab_Sanktuarium" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
 <div id="ta_9" class="t s2_9">-Regeneracja Obszarowa</div>
+<table id="tab_Regeneracja" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
 <div id="tb_9" class="t s2_9">-Klątwy/błogosławieństwa</div>
-<div id="tc_9" class="t s2_9">-</div>
-<div id="td_9" class="t s2_9">-</div>
-<div id="te_9" class="t s2_9">-</div>
-<div id="tf_9" class="t s2_9">-</div>
-<div id="tg_9" class="t s2_9">-</div>
-<div id="th_9" class="t s2_9">-</div>
-<div id="ti_9" class="t s3_9">Glify:</div>
+<div id="tc_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB1" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="td_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB2" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="te_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB3" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tf_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB4" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tg_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB5" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="th_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB6" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="ti_9" class="t s3_9">Glify:					Mistrz KI: <input type="text" value="0"></div>
 <div id="tj_9" class="t s2_9">-Ukrycie</div>
+<table id="tab_Ukrycie" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
 <div id="tk_9" class="t s2_9">-Bariera</div>
-<div id="tl_9" class="t s2_9">-</div>
-<div id="tm_9" class="t s2_9">-</div>
-<div id="tn_9" class="t s2_9">-</div>
-<div id="to_9" class="t s2_9">-</div>
-<div id="tp_9" class="t s2_9">-</div>
-<div id="tq_9" class="t s2_9">-</div>
+<table id="tab_Bariera" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tl_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB7" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tm_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB8" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tn_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB9" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="to_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB10" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tp_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB11" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
+<div id="tq_9" class="t s2_9">-<input type="text"></div>
+<table id="tab_KB12" class="t">
+	<tr>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+		<th><input type="checkbox" class="KI-check"></th>
+	</tr>
+</table>
 <div id="tr_9" class="t s2_9">PT: </div>
+
+<table id="tab_mantry" class="t s2_9">
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+	<tr>
+		<td><input type="text" class="tab_mantry_K1 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K2 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K3 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K4 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K5 tab_mantry_W"></td>
+		<td><input type="text" class="tab_mantry_K6 tab_mantry_W"></td>
+	</tr>
+</table>
 
 <!-- End text definitions -->
 
