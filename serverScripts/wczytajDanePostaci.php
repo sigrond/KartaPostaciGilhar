@@ -71,10 +71,10 @@ foreach($myFields as $key => $value){
 	foreach($value as $fieldName => $fieldValue){
 		//if($i++<20){
 		if($fieldName===$first){
-			$sqlFields.=$fieldName;
+			$sqlFields.="`".$fieldName."`";
 		}
 		else{
-			$sqlFields.=", ".$fieldName;
+			$sqlFields.=", `".$fieldName."`";
 		}
 		//$sqlValues.=", '".$fieldValue."'";//}
 	}

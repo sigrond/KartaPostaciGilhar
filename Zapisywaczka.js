@@ -39,11 +39,12 @@ function zapiszPostacDoBazy(){
 				},
 			success: function (json) {
 				console.log(json);
-				var myStr=String("");
+				/*var myStr=String("");
 				$.each(json,function(i,v){
 					myStr+=i+": "+v+", ";
 				})
-				$("#debug_response1").html(myStr);
+				$("#debug_response1").html(myStr);*/
+				sprawdzSynchronizacje();
 			},
 			error: function (responseData, textStatus, errorThrown) {
 				alert('POST failed.');
@@ -139,6 +140,7 @@ function wczytajPostacZBazy(){
 
 
 $(document).ready(function(){
+	try{
 	var i=0;
 	myOuter="";
 	if($("#actual_page").length)
@@ -241,4 +243,9 @@ $(document).ready(function(){
 		zapisz(this.id, this.value);//zapis pojedyńczej zmienionej wartości
 		sprawdzSynchronizacje();
 	});
+	}
+	catch(err)
+	{
+		console.log("złapany błąd: "+err);
+	}
 });

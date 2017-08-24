@@ -39,7 +39,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item w3-card-4" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item" id="myVersion">v.0.3.5alpha.60</i>
+	<i class="w3-bar-item" id="myVersion">v.0.3.6alpha.65</i>
 	<div id="sync_status" class="w3-bar-item w3-card-4 w3-yellow material-icons" style="float:right;">cached</div>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Kalkulatory</button>
@@ -54,11 +54,13 @@
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<button class="w3-button">Logowanie</button>
 		<div class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 100;">
-			<label class="w3-bar-item">Login</label>
-			<input id="Login" class="w3-bar-item w3-input w3-border" type="text">
-			<label class="w3-bar-item">Hasło</label>
-			<input id="Haslo" class="w3-bar-item w3-input w3-border" type="password">
-			<input id="Logowanie" class="w3-bar-item w3-button w3-round-xxlarge w3-khaki" type="button" value="Logowanie" onclick="logowanie()">
+			<form method="POST" action="javascript:void(0);" onSubmit="logowanie()">
+				<label class="w3-bar-item">Login</label>
+				<input id="Login" class="w3-bar-item w3-input w3-border" type="text">
+				<label class="w3-bar-item">Hasło</label>
+				<input id="Haslo" class="w3-bar-item w3-input w3-border" type="password">
+				<input id="Logowanie" class="w3-bar-item w3-button w3-round-xxlarge w3-khaki" type="submit" value="Logowanie">
+			</form>
 		</div>
 	</div>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
@@ -68,7 +70,7 @@
 			<a href="#" class="w3-bar-item w3-button" onclick="zapiszPostacDoBazy()">Zapisz postać do bazy</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="DownloadPages(); wczytajPostacZBazy(); $('#myBarDiv').delay(100000).hide(); pokaz(strona);">Wczytaj postać z bazy</a>
 			<a href="#" class="w3-bar-item w3-button" onclick="pokaz('AdminPanel')">Administracja</a>
-			<a href="#" class="w3-bar-item w3-button" onclick="fieldColector={};">Wczyczyść lokalnie</a>
+			<a href="#" class="w3-bar-item w3-button" onclick="fieldColector={}; localStorage.fieldColector=null; localStorage.myVersion=0">Wczyczyść lokalnie</a>
 		</div>
 	</div>
 </div>
@@ -194,7 +196,7 @@ function DownloadPages(){
 				});
 			}
 			width+=100/arr.length;
-			console.log("myBar width: "+width);
+			//console.log("myBar width: "+width);
 			$("#myBar").delay(10000).width(width+"%");
 		});
 	});
@@ -262,12 +264,12 @@ function logowanie(){
 	var uname=String($("#Login").val());
 	var upswd=String(MD5($("#Haslo").val()));//i tak cba nie daje darmowego ssl, a haslo nie musi zapewniać bezpieczeństwa
 	$.ajax({
-    type: "GET",
+    type: "POST",
     url: 'http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/login.php',
-	dataType: 'jsonp',//więc jak już mówiłem są wredne zabezpieczenia, które obchodzę nadmiarowym kodem
+	crossDomain: true,
+	dataType: 'json',
 	jsonpCallback: 'callback',
-    contentType: "text/html",
-    crossDomain:'true',
+    contentType: "application/x-www-form-urlencoded",
     data: {
 		name: uname,
 		pswd: upswd
@@ -312,8 +314,14 @@ $(document).ready(function(){
 	//$("#actual_page").html('<iframe id="my_object" type="text/html" src="1.html" style="width:100%;height:400%; -webkit-transform-origin: top left;"></iframe>');
 	DownloadPages();
 	$(document).ready(function(){
+	try{
 		pokaz(1);
 		$("#myBarDiv").delay(100000).hide();
+	}
+	catch(err)
+	{
+		console.log("złapany błąd: "+err);
+	}
 	});
 	/*console.log($("#my_object").contents());
 	$("#my_object").ready(function(){

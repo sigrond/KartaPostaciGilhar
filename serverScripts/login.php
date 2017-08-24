@@ -1,7 +1,10 @@
 <?php
 error_reporting(E_ALL);
-header('Content-type: application/json');
-if(isset($_GET["name"]) && isset($_GET["pswd"]))
+header('Content-type: application/json', true);
+header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+if(isset($_POST["name"]) && isset($_POST["pswd"]))
 {
 	$servername = "localhost";
 	$username = "sigrond";
@@ -30,7 +33,7 @@ if(isset($_GET["name"]) && isset($_GET["pswd"]))
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			if(password_verify($_GET["pswd"], $row["pswd"]))
+			if(password_verify($_POST["pswd"], $row["pswd"]))
 			{
 				$arr["status"]="OK";
 			}
@@ -50,5 +53,5 @@ else
 {
 	$arr["status"]="NOLOGINORPSWD";
 }
-echo $_GET['callback'] . '('.json_encode($arr).')';
+echo json_encode($arr);
 ?>

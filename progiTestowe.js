@@ -28,6 +28,7 @@ function progTestowy(prog, stata)
 }
 
 $(document).ready(function(){
+	try{
 	$(".stataG").each(function(){
 		$("#"+this.id+"T1").val(progTestowy(1,this.value));
 		$("#"+this.id+"T2").val(progTestowy(2,this.value));
@@ -38,4 +39,9 @@ $(document).ready(function(){
 		$("#"+this.id+"T2").val(progTestowy(2,this.value));
 		$("#"+this.id+"T3").val(progTestowy(3,this.value));
 	});
+	}
+	catch(err)
+	{
+		console.log("złapany błąd: "+err);
+	}
 });

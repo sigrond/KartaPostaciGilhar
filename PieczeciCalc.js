@@ -47,8 +47,14 @@ function ObliczPT()
 }
 
 $(document).ready(function(){
+	try{
 	$("input").change(function(){
 		ObliczObrazenia();
 		ObliczPT();
 	});
+	}
+	catch(err)
+	{
+		console.log("złapany błąd: "+err);
+	}
 })
