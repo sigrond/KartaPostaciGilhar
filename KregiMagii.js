@@ -137,10 +137,10 @@ DrawKregiMagii: function(){
 
 MagiaLogic: function (thatObject)
 {
-	//console.log("MagiaLogic triggerd!: this: ");
-	//console.log(this);
-	//console.log("thatObject:");
-	//console.log(thatObject);
+	console.log("MagiaLogic triggerd!: this: ");
+	console.log(this);
+	console.log("thatObject:");
+	console.log(thatObject);
 	switch(thatObject.id){
 		case "magia":
 			var tmp=c0;
@@ -437,21 +437,23 @@ MagiaLogic: function (thatObject)
 }
 
 $(document).ready(function(){
-	try{
-		KregiMagii.InitializeRaphael();
-		scriptLoaded.done(function(){
-			console.log("promise accomplished!");
-			KregiMagii.DrawKregiMagii();
-			$(".glowable").change(function(){
-				KregiMagii.MagiaLogic(this);
+	setTimeout(function(){
+		try{
+			KregiMagii.InitializeRaphael();
+			scriptLoaded.done(function(){
+				console.log("promise accomplished!");
+				KregiMagii.DrawKregiMagii();
+				$(".glowable").change(function(){
+					KregiMagii.MagiaLogic(this);
+				});
+				$(".glowable").each(function(){
+					KregiMagii.MagiaLogic(this);
+				});
 			});
-			$(".glowable").each(function(){
-				KregiMagii.MagiaLogic(this);
-			});
-		});
-	}
-	catch(err)
-	{
-		console.log("złapany błąd: "+err);
-	}
+		}
+		catch(err)
+		{
+			console.log("złapany błąd: "+err);
+		}
+	}, 100);
 });

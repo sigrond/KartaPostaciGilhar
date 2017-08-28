@@ -2,7 +2,9 @@
  * funkcje odpowiedzialne za zapisywanie i wczytywanie danych karty postaci
 */
 
-fieldColector=new Array();
+var strona;
+
+var fieldColector;
 
 function zapisz(nazwa, wartosc){
 	//localStorage.setItem(String(nazwa), String(wartosc));
@@ -137,10 +139,15 @@ function wczytajPostacZBazy(){
 		});
 }
 
+if(typeof zapisywaczkaStrony == "undefined")
+{
+	zapisywaczkaStrony = $.Deferred();
+	zapisywaczkaStrony.resolve();
+}
 
 
-$(document).ready(function(){
-	try{
+function readyPage(){
+try{
 	var i=0;
 	myOuter="";
 	if($("#actual_page").length)
@@ -155,17 +162,20 @@ $(document).ready(function(){
 		localStorage["myVersion"]=$("#myVersion").html();
 		console.log("myVersion updated");
 		localStorage["fieldColector"]=null;
-		for(var i_strona=1;i_strona<=13;i_strona++)
-		localStorage['zapisane'+i_strona]=false;
+		pagesList.forEach(function(val,ind,arr){
+			localStorage['zapisane'+val]=false;
+		});
 	}
 	if(fieldColector==null || updated)
 	{
 		fieldColector={};
 		fieldColector[strona]={};
+		console.log("fieldColector==null || updated");
 	}
 	if(fieldColector[strona]==undefined)
 	{
 		fieldColector[strona]={};
+		console.log("fieldColector[strona]==undefined");
 	}
 	$(myOuter+"input").each(function(){
 		if(!this.id)
@@ -243,9 +253,13 @@ $(document).ready(function(){
 		zapisz(this.id, this.value);//zapis pojedyńczej zmienionej wartości
 		sprawdzSynchronizacje();
 	});
-	}
-	catch(err)
-	{
-		console.log("złapany błąd: "+err);
-	}
-});
+}
+catch(err)
+{
+	console.log("złapany błąd: "+err);
+}
+finally
+{
+	zapisywaczkaStrony.resolve();
+}
+}
