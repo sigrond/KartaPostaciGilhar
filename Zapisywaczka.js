@@ -195,7 +195,7 @@ try{
 	
 	if(localStorage['zapisane'+strona]==="true" && !updated)
 	{
-		console.log(localStorage.zapisane);
+		console.log("localStorage['zapisane'+strona]==='true' && !updated");
 		$(myOuter+"input").each(function(){
 			this.value=wczytaj(this.id);//wczytanie wszystkich wartości
 			if(this.type=="checkbox")
