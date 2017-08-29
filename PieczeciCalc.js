@@ -1,6 +1,7 @@
 
 function ObliczObrazenia()
 {
+	var Elementy=Number($("#Elementy").val());
 	var Obwody=Number($("#Obwody").val());
 	var SpecMnoznik=Number($("#SpecMnoznik").val());
 	var Ogien=Number($("#Ogien").val());
@@ -21,6 +22,14 @@ function ObliczObrazenia()
 	var obrazenia=0;
 	obrazenia=Obwody*SpecMnoznik*MocElem;
 	$("#Obrazenia").html(obrazenia);
+	if(Elementy==Ogien+Woda+Piorun+Powietrze+Ziemia+Lod)
+	{
+		$("#w_elementy").addClass('w3-green').removeClass('w3-red');
+	}
+	else
+	{
+		$("#w_elementy").addClass('w3-red').removeClass('w3-green');
+	}
 }
 
 function ObliczPT()
@@ -48,10 +57,12 @@ function ObliczPT()
 
 $(document).ready(function(){
 	try{
-	$("input").change(function(){
+		$("input").change(function(){
+			ObliczObrazenia();
+			ObliczPT();
+		});
 		ObliczObrazenia();
 		ObliczPT();
-	});
 	}
 	catch(err)
 	{
