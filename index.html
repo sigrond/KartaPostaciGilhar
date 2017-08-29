@@ -40,7 +40,7 @@
 	<button class="w3-button w3-teal w3-xlarge w3-bar-item w3-card-4" onclick="w3_open()">
 	<i class="material-icons">menu</i><!--&#9776;--></button>
 	<b class="w3-bar-item">Karta Postaci Gilhar </b>
-	<i class="w3-bar-item" id="myVersion">v.0.3.7alpha.70</i>
+	<i class="w3-bar-item" id="myVersion">v.0.3.7alpha.74</i>
 	<div class="w3-dropdown-click w3-dropdown-hover" style="float:right;">
 		<div id="sync_status" class="w3-bar-item w3-card-4 w3-yellow material-icons">cached</div>
 		<div class="w3-dropdown-content w3-bar-block w3-border" style="z-index: 100;">
@@ -105,7 +105,7 @@
 </div>
 
 <script>
-pagesList=['1','2','3','4','5','6','7','8','9','10','11','12','13','KregiMagii','StatCalc','Rejestracja','AdminPanel'];
+pagesList=['1','2','3','4','5','6','7','8','9','10','11','12','13','KregiMagii'];
 
 function w3_open() {
 	//document.getElementById("main").style.marginLeft = "20%";
@@ -190,11 +190,11 @@ function InstallPage(data, i)
 			scriptsExecutionOrderGuard[index]=true;
 		}
 	});
-	$("#actual_page").ready(function(){
+	//$("#actual_page").ready(function(){
 		strona=i;
-		readyPage();
+		readyPage(i);
 		$("#status_p"+strona).addClass('w3-green').removeClass('w3-yellow').removeClass('w3-red').removeClass('w3-orange')
-	});
+	//});
 }
 
 function DownloadPages(){
@@ -211,19 +211,21 @@ function DownloadPages(){
 					url: String('http://projektgil.cba.pl/KartaPostaciGilhar/serverScripts/getPage.php?page='+val),
 					dataType: 'jsonp',
 					crossDomain:'true',
-					async: false,
+					async: true,
 					success: function(json) {
 						localStorage.setItem("page"+val, json.data);
 						InstallPage(json.data, val);
+						width+=100/arr.length;
+						$("#myBar").width(width+"%");
 					},
 					error: function() {
 						console.log("Nie udało się pobrać strony: "+val);
 					}
 				}),zapisywaczkaStrony);
 			}
-			width+=100/arr.length;
+			//width+=100/arr.length;
 			//console.log("myBar width: "+width);
-			$("#myBar").delay(10000).width(width+"%");
+			//$("#myBar").delay(10000).width(width+"%");
 		});
 	});
 }
@@ -341,7 +343,7 @@ $(document).ready(function(){
 	//DownloadPages();
 	$(document).ready(function(){
 	try{
-		//DownloadPages();
+		DownloadPages();
 		pokaz(1);
 		$("#myBarDiv").delay(100000).hide();
 	}

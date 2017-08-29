@@ -146,7 +146,7 @@ if(typeof zapisywaczkaStrony == "undefined")
 }
 
 
-function readyPage(){
+function readyPage(strona){
 try{
 	var i=0;
 	myOuter="";
