@@ -33,7 +33,7 @@ if(isset($_POST["name"]) && isset($_POST["pswd"]))
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			if(password_verify($_POST["pswd"], $row["pswd"]))
+			if(password_verify($_POST["pswd"], trim($row["pswd"])))
 			{
 				$arr["status"]="OK";
 			}

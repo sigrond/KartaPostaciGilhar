@@ -2,6 +2,8 @@
 function ObliczObrazenia()
 {
 	var Elementy=Number($("#Elementy").val());
+	var Moc=Number($("#Moc").val());
+	var Mocwymagana=Number($("#MocWymagana").val());
 	var Obwody=Number($("#Obwody").val());
 	var SpecMnoznik=Number($("#SpecMnoznik").val());
 	var Ogien=Number($("#Ogien").val());
@@ -10,19 +12,16 @@ function ObliczObrazenia()
 	var Powietrze=Number($("#Powietrze").val());
 	var Ziemia=Number($("#Ziemia").val());
 	var Lod=Number($("#Lod").val());
+	var Magia=Number($("#Magia").val());
 	var MocElem=0;
-	if(Powietrze>=1)
-	{
-		MocElem=2.5*Ogien+2.5*Woda+2.5*Piorun+0.5*Powietrze+2.5*Ziemia+2.5*Lod;
-	}
-	else
-	{
-		MocElem=1.5*Ogien+1*Woda+2.5*Piorun+0.5*Powietrze+1.5*Ziemia+2*Lod;
-	}
+	MocElem=1+0.2*Ogien+0.1*Woda+0.3*Piorun-0.1*Powietrze+0.2*Ziemia+0.2*Lod-0.1*Magia;
 	var obrazenia=0;
-	obrazenia=Obwody*SpecMnoznik*MocElem;
+	obrazenia=Moc*SpecMnoznik*MocElem;
 	$("#Obrazenia").html(obrazenia);
-	if(Elementy==Ogien+Woda+Piorun+Powietrze+Ziemia+Lod)
+	var czas=0.0;
+	czas=Mocwymagana/Obwody;
+	$("#czas").html(czas);
+	if(Elementy==Ogien+Woda+Piorun+Powietrze+Ziemia+Lod+Magia)
 	{
 		$("#w_elementy").addClass('w3-green').removeClass('w3-red');
 	}
@@ -36,12 +35,15 @@ function ObliczPT()
 {
 	var Elementy=Number($("#Elementy").val());
 	var Formy=Number($("#Formy").val());
+	var Tier=Number($("#Tier").val());
+	var Piorun=Number($("#Piorun").val());
+	var Powietrze=Number($("#Powietrze").val());
 	var PT="0";
-	if(Elementy+Formy<=6)
+	if(Tier<=2)
 	{
 		PT="I";
 	}
-	else if(Elementy+Formy<=12)
+	else if(Tier<=4)
 	{
 		PT="II";
 	}
@@ -52,6 +54,7 @@ function ObliczPT()
 	$("#PT").html(PT);
 	var utrudnienie=-5*(Elementy-Formy*2);
 	utrudnienie=utrudnienie>0?0:utrudnienie;
+	utrudnienie=utrudnienie-3*Piorun+Powietrze
 	$("#utrudnienie").html(utrudnienie);
 }
 

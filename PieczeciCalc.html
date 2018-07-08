@@ -14,19 +14,23 @@
 			<h2>Kalkulator Magii Pieczęci</h2>
 		</div>
 		<div class="w3-row-padding">
-		<form class="w3-container w3-border w3-col s6 w3-center w3-card-4">
+		<form class="w3-container w3-border w3-col s8 w3-center w3-card-4">
 			<table class="w3-table-all">
 				<tr class="w3-blue">
+					<th>Tier</th>
 					<th>Elem.</th>
 					<th>Form</th>
 					<th>Spe.</th>
-					<th>Czas</th>
+					<th>Moc [Atk]</th>
+					<th>Moc wymagana</th>
 				</tr>
 				<tr>
+					<td><input id="Tier" type="number" class="w3-input w3-border" value="1"></td>
 					<td><input id="Elementy" type="number" class="w3-input w3-border" value="1"></td>
 					<td><input id="Formy" type="number" class="w3-input w3-border" value="1"></td>
 					<td><input id="Spec" type="number" class="w3-input w3-border" value="0"></td>
-					<td><input id="Czas" type="number" class="w3-input w3-border" value="3"></td>
+					<td><input id="Moc" type="number" class="w3-input w3-border" value="50"></td>
+					<td><input id="MocWymagana" type="number" class="w3-input w3-border" value="100"></td>
 				</tr>
 			</table>
 			
@@ -37,12 +41,13 @@
 			<label class="w3-text-blue">Wybrane elementy:</label>
 			<table class="w3-table-all">
 				<tr class="w3-lime">
-					<th>Ogień |1,5</th>
-					<th>Woda |1</th>
-					<th>Piorun |2,5</th>
-					<th>Powietrze |0,5|Wzm.(2,5)</th>
-					<th>Ziemia |1,5</th>
-					<th>Lód|2</th>
+					<th>Ogień |0,2</th>
+					<th>Woda |0,1</th>
+					<th>Piorun |0,3</th>
+					<th>Powietrze |-0,1</th>
+					<th>Ziemia |0,2</th>
+					<th>Lód |0,2</th>
+					<th>Magia |-0,1</th>
 				</tr>
 				<tr id="w_elementy">
 					<td><input id="Ogien" type="number" class="w3-input w3-border" value="0"></td>
@@ -51,16 +56,19 @@
 					<td><input id="Powietrze" type="number" class="w3-input w3-border" value="0"></td>
 					<td><input id="Ziemia" type="number" class="w3-input w3-border" value="0"></td>
 					<td><input id="Lod" type="number" class="w3-input w3-border" value="0"></td>
+					<td><input id="Magia" type="number" class="w3-input w3-border" value="0"></td>
 				</tr>
 			</table>
 		</form>
-		<div class="w3-col s6 w3-center w3-border w3-card-4">
+		<div class="w3-col s4 w3-center w3-border w3-card-4">
 			<h3>Obrażenia:</h3>
 			<div id="Obrazenia">0</div>
 			<h3>Pozim testu:</h3>
 			<div id="PT">0</div>
 			<h3>Utrudnienia:</h3>
 			<div id="utrudnienie">0</div>
+			<h3>Czas:</h3>
+			<div id="czas">0</div>
 		</div>
 		</div>
 	</div>
